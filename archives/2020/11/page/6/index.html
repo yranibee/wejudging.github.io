@@ -20,17 +20,7 @@
   <title>归档 - weijiajin</title>
 
   
-    <meta name="description" content="all of weijiajin">
-<meta property="og:type" content="website">
-<meta property="og:title" content="归档">
-<meta property="og:url" content="https://weijiajin.com/archives/2020/11/page/6/index.html">
-<meta property="og:site_name" content="weijiajin">
-<meta property="og:description" content="all of weijiajin">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="weijiajin">
-<meta name="twitter:card" content="summary">
-  
-  
+  <meta name="description" content="all of weijiajin">
 
   <!-- feed -->
   
@@ -1323,6 +1313,33 @@
 
 
 <!-- optional -->
+
+  <script>
+  function utterances(){
+    if(!document.getElementById("utterances"))return;
+    setTimeout(function() {
+      var checkUtterances = setInterval(function () {
+        var el = document.getElementById("utterances");
+        if (!el) return
+        clearInterval(checkUtterances)
+        try {
+          el.innerHTML="";
+        } catch (error) {}
+        var script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        const keys = ['repo', 'issue-term', 'issue-number', 'theme', 'label', 'crossorigin'];
+        keys.forEach((key, i) => {
+          if (el.attributes[key] && el.attributes[key].value) {
+            script.setAttribute(key, el.attributes[key].value);
+          }
+        });
+        el.appendChild(script);
+       }, 200)
+    });
+  }
+  utterances();
+</script>
+
 
 
 

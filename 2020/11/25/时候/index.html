@@ -20,19 +20,7 @@
   <title>时候 - weijiajin</title>
 
   
-    <meta name="description" content="现在的沉默，只是因为我们还没有进入彼此的生活，终有一天我们会互相了解，会相知，会在一起，我们会发现我们当初的抉择是对的，因为我们很快乐。当然，这一切需要时间慢慢沉淀。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="时候">
-<meta property="og:url" content="https://weijiajin.com/2020/11/25/%E6%97%B6%E5%80%99/index.html">
-<meta property="og:site_name" content="weijiajin">
-<meta property="og:description" content="现在的沉默，只是因为我们还没有进入彼此的生活，终有一天我们会互相了解，会相知，会在一起，我们会发现我们当初的抉择是对的，因为我们很快乐。当然，这一切需要时间慢慢沉淀。">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-25T06:39:02.000Z">
-<meta property="article:modified_time" content="2020-11-25T07:02:39.000Z">
-<meta property="article:author" content="weijiajin">
-<meta name="twitter:card" content="summary">
-  
-  
+  <meta name="description" content="现在的沉默，只是因为我们还没有进入彼此的生活，终有一天我们会互相了解，会相知，会在一起，我们会发现我们当初的抉择是对的，因为我们很快乐。当然，这一切需要时间慢慢沉淀。">
 
   <!-- feed -->
   
@@ -122,6 +110,20 @@
 
 
 
+
+  <div class='related-wrap md' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body utterances'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="utterances" repo="wejudging/weijiajin.com-comments" issue-term="pathname" theme="github-light"></div>
+
+    </div>
+  </div>
 
 
 
@@ -271,6 +273,33 @@
 
 
 <!-- optional -->
+
+  <script>
+  function utterances(){
+    if(!document.getElementById("utterances"))return;
+    setTimeout(function() {
+      var checkUtterances = setInterval(function () {
+        var el = document.getElementById("utterances");
+        if (!el) return
+        clearInterval(checkUtterances)
+        try {
+          el.innerHTML="";
+        } catch (error) {}
+        var script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        const keys = ['repo', 'issue-term', 'issue-number', 'theme', 'label', 'crossorigin'];
+        keys.forEach((key, i) => {
+          if (el.attributes[key] && el.attributes[key].value) {
+            script.setAttribute(key, el.attributes[key].value);
+          }
+        });
+        el.appendChild(script);
+       }, 200)
+    });
+  }
+  utterances();
+</script>
+
 
 
 
