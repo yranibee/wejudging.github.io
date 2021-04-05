@@ -21,8 +21,8 @@ sidebar:
   menu:
     post: '[btn.blog](/)'
     wiki: '[btn.wiki](/wiki/)'
-    friends: '[友链](/friends/)'
-    about: '[关于](/about/)'
+    notes: '[笔记](/notes/)'
+    more: '[更多](/about/)'
   # Sidebar widgets
   widgets:
     # default layout in home/wiki/categories/tags/archives pages
