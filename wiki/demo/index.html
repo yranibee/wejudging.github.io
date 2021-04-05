@@ -74,7 +74,7 @@
         
         
           <div class='doc-tree active'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">开始前的准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%E5%8D%9A%E5%AE%A2"><span class="toc-text">示例博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Todo"><span class="toc-text">Todo</span></a></li></ol>
+            
           </div>
         
       
@@ -123,7 +123,7 @@
       
     </div>
     <div id='post-meta'>
-      更新于&nbsp;<time datetime='2021-04-05T07:50:36.061Z'>2021-04-05</time>
+      更新于&nbsp;<time datetime='2021-04-05T07:53:49.214Z'>2021-04-05</time>
     </div>
   
   </div>
@@ -136,35 +136,8 @@
 <p>因此，推荐内容创作者使用 Stellar 开始您全新的博客之旅。</p>
 <details class="tag-plugin folding" ><summary><span>Stellar 的核心设计风格：实用简约主义</span></summary><div class="body"><p>简约不等于简单，而是在实现复杂功能的前提下进行视觉减负设计。人的注意力是有限的，要提高有效信息的醒目程度，就必须降低不重要信息醒目程度，删除所有无效信息。</p><p><strong>降低视觉密度</strong></p><ul><li>增加留白，增加间距。</li><li>减少颜色丰富度，大面积出现的是中性色，彩色必须有其特殊意义，意义相同的元素使用同一种颜色。</li></ul><p><strong>提高有效信息优先级</strong></p><ul><li>标题是最大的，对比度最高的</li><li>不可交互的不重要的小标题（如侧边栏某个插件的标题）降低对比度</li><li>与文章相关的不重要的小标题，使用小号字体</li></ul><p><strong>删掉无效信息</strong></p><ul><li>文章标签、字数、阅读量、评论数</li><li>网站访问量、字数、搭建时间</li><li>全局播放器（除了特殊文章）</li></ul></div></details>
 
-<h2 id="开始前的准备工作"><a href="#开始前的准备工作" class="headerlink" title="开始前的准备工作"></a>开始前的准备工作</h2><p>尽管我们致力于降低使用门槛，但是自建独立博客仍然需要一定的相关知识，<a target="_blank" rel="noopener" href="https://www.runoob.com/markdown/md-tutorial.html">markdown</a> 常用语法是必须要掌握的，除此之外，您还需要知道 <code>yaml</code> 文件格式、简单的 <code>git</code> 知识，最最重要的是，遇到问题知道该如何高效地寻找答案：</p>
-<div class="tag-plugin checkbox" ><input type="checkbox" checked="true"/><span>翻阅和搜索文档</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox" checked="true"/><span>搜索 issues 中是否已经有解决办法</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox" checked="true"/><span>如果没有，新建 issue 并按照要求进行操作，详尽地描述您遇到的问题</span></div>
-
-<p>如果您没有使用过 Hexo 也不要着急，可以先通读一遍 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> 中文文档。此外，如果您从旧版本更新或着其它主题迁移，请确保环境版本不要太低，否则会产生兼容性问题：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Hexo:</span> <span class="number">5.4</span><span class="number">.0</span></span><br><span class="line"><span class="attr">hexo-cli:</span> <span class="number">4.2</span><span class="number">.0</span></span><br><span class="line"><span class="attr">node.js:</span> <span class="number">14.15</span><span class="number">.4</span> <span class="string">LTS</span> <span class="comment"># 选 LTS 就行，过高的版本 hexo 还没有进行兼容。</span></span><br><span class="line"><span class="attr">npm:</span> <span class="number">6.14</span><span class="number">.10</span> <span class="string">LTS</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><div class="tag-plugin tabs" id="install"><ul class="nav-tabs"><li class="tab active"><a href="#install-1">稳定版</a></li><li class="tab"><a href="#install-2">最新版</a></li><li class="tab"><a href="#install-3">DIY</a></li></ul><div class="tab-content fs14"><div class="tab-pane active"  id="install-1"><p>在终端中输入：</p>
-<div class="tag-plugin copy"><div class="link-box"><input class="copy-area" readonly id="copy-npmihexothemestellar" value="npm i hexo-theme-stellar"><button class="copy-btn" onclick="util.copy(&quot;copy-npmihexothemestellar&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></div></div><div class="tab-pane"  id="install-2"><p>把 Stellar 添加为子模块</p>
-<div class="tag-plugin copy"><div class="link-box"><input class="copy-area" readonly id="copy-gitsubmoduleaddhttps:github.comxaoxuuhexothemestellar.gitthemesstellar" value="git submodule add https://github.com/xaoxuu/hexo-theme-stellar.git themes/stellar"><button class="copy-btn" onclick="util.copy(&quot;copy-gitsubmoduleaddhttps:github.comxaoxuuhexothemestellar.gitthemesstellar&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></div></div><div class="tab-pane"  id="install-3"><ol>
-<li>把 Stellar <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">fork</a> 到您的 GitHub</li>
-<li>把您 fork 的 Stellar 添加为子模块<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https:&#x2F;&#x2F;github.com&#x2F;#yourname#&#x2F;hexo-theme-stellar.git themes&#x2F;stellar</span><br></pre></td></tr></table></figure></li>
-</ol></div></div></div>
-
-<p>在 <code>blog/_config.yml</code> 文件中找到并修改：</p>
-<div class="tag-plugin copy"><div class="link-box"><input class="copy-area" readonly id="copy-theme:stellar" value="theme: stellar"><button class="copy-btn" onclick="util.copy(&quot;copy-theme:stellar&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></div>
 
 
-<h2 id="示例博客"><a href="#示例博客" class="headerlink" title="示例博客"></a>示例博客</h2><div class="tag-plugin sites-wrap"><div class="sitesjs-wrap" id="sites-api" api="https://issues-api.vercel.app/v1/xaoxuu/hexo-theme-stellar-examples"><div class="group-body"></div></div></div>
-
-<div class="tag-plugin note"><div class="title"><strong>小提示</strong></div><div class="body"><p>如果您也使用了 Stellar 并希望显示在这里，可以在 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar-examples/issues">hexo-theme-stellar-examples</a> 中提交 issue 告知您的站点信息，在您提交后的大约 3 分钟内生效。</p></div></div>
-
-<h2 id="Todo"><a href="#Todo" class="headerlink" title="Todo"></a>Todo</h2><div class="tag-plugin checkbox" ><input type="checkbox"/><span>搜索</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox"/><span>横向滚动的 gallery 标签</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox"/><span>支持 fancybox 的 gallery 标签</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox"/><span>更多实用标签</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox"/><span>更多评论插件</span></div>
-<div class="tag-plugin checkbox" ><input type="checkbox"/><span>笔记页面布局模板</span></div>
   
 
 
