@@ -50,7 +50,7 @@ sidebar:
 ######## Article ########
 article:
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
-  auto_excerpt: 200
+  auto_excerpt: 50
   # 分类颜色
   category_color:
     '新闻稿': '#DA0F47'
