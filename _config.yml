@@ -101,7 +101,7 @@ theme: stellar
 deploy:
   type: git
   repository: https://github.com/wejudging/wejudging.github.io.git
-  branch: master
+  branch: main
 
 
 wiki_dir: wiki
