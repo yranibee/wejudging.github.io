@@ -112,7 +112,7 @@ footer:
      - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/cf1ae151f9e83.svg"/>'
        url: https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62
      - icon: '<img src="/images/volantis.svg"/>'
-       url: /
+       url: https://volantis.weijiajin.com
   license: #'[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
   source: '[GitHub](https://github.com/wejudging/wejudging.github.io)'
 
