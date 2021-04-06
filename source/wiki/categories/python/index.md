@@ -1,7 +1,7 @@
 ---
 layout: index
-order: 2
-title: shell
+order: 5
+title: python
 wiki: []
 ---
 
