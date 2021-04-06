@@ -1,6 +1,6 @@
 ---
 layout: index
-order: 1
+order: 6
 title: swift
 wiki: []
 ---

@@ -1,6 +1,6 @@
 ---
 layout: index
-order: 7
+order: 1
 title: c++
 wiki: []
 ---

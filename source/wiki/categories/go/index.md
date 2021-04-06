@@ -1,7 +1,7 @@
 ---
 layout: index
-order: 5
-title: shell
+order: 2
+title: go
 wiki: []
 ---
 

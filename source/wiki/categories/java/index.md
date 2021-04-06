@@ -1,6 +1,6 @@
 ---
 layout: index
-order: 6
+order: 3
 title: java
 wiki: []
 ---
