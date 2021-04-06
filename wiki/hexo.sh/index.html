@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 5.4.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>hexo.sh：一个方便管理与发布hexo博客的脚本 - weijiajin</title>
+
+  
+  <meta name="description" content="此脚本可以很方便执行各种 hexo 命令，开启后会一直保持会话，随时输入简短的命令去执行一系列操作，提高效率。">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+</head>
+
+<body>
+  
+<div class="l_cover"><article class="cover-wrap md"><div class="preview"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/hexo.sh/screenshot.png"></div><div class="cover-title"><span>hexo.sh</span></div><div class="description">此脚本可以很方便执行各种 hexo 命令，开启后会一直保持会话，随时输入简短的命令去执行一系列操作，提高效率。</div><div class="start-wrap"><a class="button theme start" href="#start">开始使用</a></div></article></div><hr>
+
+  <div class='l_body' id='start'>
+    <aside class='l_left'>
+    
+
+<header class='header'>
+  <div class='logo-wrap'>
+  
+    <a class='avatar' href='/about/'><img no-lazy src='/images/logo.svg'/></a>
+  
+  
+    <a class='title' href='/'>weijiajin</a>
+  
+</div>
+
+  <nav class="menu dis-select"><a class="nav-item" href="/">文章</a><a class="nav-item active" href="/wiki/">项目</a><a class="nav-item" href="/notes/">笔记</a><a class="nav-item" href="/about/">更多</a></nav>
+</header>
+
+<div class='widgets'>
+  
+    
+      
+      
+
+  <div class='widget-wrap' id='toc'>
+    <div class='widget-header h4 dis-select'>
+      <span class='name'>
+        
+          hexo.sh
+        
+      </span>
+    </div>
+    <div class='widget-body fs14 wiki'>
+      
+        
+        
+          <div class='doc-tree active'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC"><span class="toc-text">下载并安装脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC"><span class="toc-text">启动脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-text">A. 使用脚本快速搭建博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC%E5%BF%AB%E9%80%9F%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2"><span class="toc-text">B. 使用脚本快速更新博客</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%94%AF%E6%8C%81%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-text">所有支持的命令</span></a></li></ol>
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+    
+  
+    
+      
+      
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <div class='widget-wrap' id='related'>
+        <div class='widget-header h4 dis-select'>
+          <span class='name'>更多实用脚本</span>
+        </div>
+        <div class='widget-body fs14'>
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                <div class='post-title'>
+                  <a href="/wiki/tag.sh/index.html">
+                    tag.sh
+                  </a>
+                </div>
+              
+            
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                <div class='post-title'>
+                  <a href="/wiki/vim-cn.sh/index.html">
+                    vim-cn.sh
+                  </a>
+                </div>
+              
+            
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                <div class='post-title'>
+                  <a href="/wiki/podspec.sh/index.html">
+                    podspec.sh
+                  </a>
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    
+  
+
+
+    
+  
+</div>
+<footer class="footer"><div class="social-wrap dis-select"><a class="social" href="mailto:wejudging@gmail.com" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/gmail.svg"/></a><a class="social" href="https://github.com/wejudging" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/cf1ae151f9e83.svg"/></a><a class="social" href="https://volantis.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/volantis.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+  <div class='bread-nav fs12'>
+  
+    
+    <div id='breadcrumb'>
+      <a class='cap breadcrumb' href='/'>主页</a>
+      <span class="sep"></span>
+      
+        <a class='cap breadcrumb' href='/wiki/'>项目</a>
+      
+      
+        <span class="sep"></span>
+        <a class='cap breadcrumb' href='/wiki/categories/shell-scripts/index.html'>实用脚本</a>
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span class="sep"></span>
+        <a class='cap breadcrumb' href='/wiki/hexo.sh/index.html'>hexo.sh</a>
+      
+    </div>
+    <div id='post-meta'>
+      更新于&nbsp;<time datetime='2021-04-06T03:17:18.890Z'>2021-04-06</time>
+    </div>
+  
+  </div>
+
+
+  <article class='content md wiki'>
+  <h1 class="article-title"><span>开始使用</span></h1>
+  <figure class="highlight sh"><figcaption><span>例如，`cs`相当于：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><figcaption><span>`cgd`相当于：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br><span class="line">git add --all</span><br><span class="line">git commit -am <span class="string">&quot;update all&quot;</span></span><br><span class="line">git push origin</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载并安装脚本"><a href="#下载并安装脚本" class="headerlink" title="下载并安装脚本"></a>下载并安装脚本</h2><p>打开终端，输入这行命令：</p>
+<div class="tag-plugin copy"><div class="link-box" width="max"><input class="copy-area" readonly id="copy-curlshttps:xaoxuu.cominstall|shshexo.sh" value="curl -s https://xaoxuu.com/install | sh -s hexo.sh"><button class="copy-btn" onclick="util.copy(&quot;copy-curlshttps:xaoxuu.cominstall|shshexo.sh&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></div>
+
+<p>如需安装指定版本，在后面加上版本号即可，例如：</p>
+<div class="tag-plugin copy"><div class="link-box" width="max"><input class="copy-area" readonly id="copy-curlshttps:xaoxuu.cominstall|shshexo.sh2.1.0" value="curl -s https://xaoxuu.com/install | sh -s hexo.sh 2.1.0"><button class="copy-btn" onclick="util.copy(&quot;copy-curlshttps:xaoxuu.cominstall|shshexo.sh2.1.0&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></div>
+
+<h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><p>在终端输入如下命令即可打开脚本：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>在终端输入如下命令即可查看脚本所有支持的指令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo.sh <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<p>如果是脚本已经启动（可以看到脚本菜单，处于待输入指令的状态），则只需要输入 <code>help</code>，下文其它情景同理。</p>
+<p>下面是一些常见使用场景：</p>
+<h3 id="A-使用脚本快速搭建博客"><a href="#A-使用脚本快速搭建博客" class="headerlink" title="A. 使用脚本快速搭建博客"></a>A. 使用脚本快速搭建博客</h3><p>let <code>path</code> = 你想把博客放在哪里，打开终端 <strong><code>cd</code> 到 <code>path</code></strong> 。</p>
+<p>在终端输入如下命令自动检查并安装所有需要的环境，然后搭建并启动博客：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo.sh init</span><br></pre></td></tr></table></figure>
+
+<p>脚本会依次执行以下这些操作：</p>
+<ol>
+<li>检测node.js环境，如果没有就安装。</li>
+<li>检测hexo环境，如果没有就安装。</li>
+<li>输入自定义博客名，在当前目录执行初始化。</li>
+<li>安装Material X主题。</li>
+<li>安装所有依赖包。</li>
+</ol>
+<div class="tag-plugin note" color="yellow"><div class="title"><strong>注意</strong></div><div class="body"><p>安装 node.js 或者 hexo 的时候需要输入一次<strong>本机密码</strong>，别忘了哦。搭建博客的时候你需要输入<strong>博客名</strong>，其他时间就可以坐和放宽了。</p></div></div>
+
+<h3 id="B-使用脚本快速更新博客"><a href="#B-使用脚本快速更新博客" class="headerlink" title="B. 使用脚本快速更新博客"></a>B. 使用脚本快速更新博客</h3><p>let <code>path</code> = 你的博客路径，打开终端 <code>cd</code> 到 <code>path</code> 。</p>
+<p>在终端输入如下命令启动博客：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo.sh s</span><br></pre></td></tr></table></figure>
+
+<p>然后修改你的文章、博客主题，如果修改了 <code>_config.yml</code> 是需要重新启动博客的，有些参数甚至需要 <code>clean</code> 之后重启才能生效，这时候你只需要在终端脚本【请输入指令】后面输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cs</span><br></pre></td></tr></table></figure>
+
+<p>就执行 <code>hexo clean</code>，然后执行 <code>hexo server</code> 了。</p>
+<p>如果你已经修改完毕，需要发布更新，可以在终端脚本【请输入指令】后面输入：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cgd</span><br></pre></td></tr></table></figure>
+
+<p>脚本就会执行 <code>hexo clean</code>、<code>hexo generate</code>、<code>hexo deploy</code>，然后执行一系列的git命令把源码的更新提交至远程仓库。</p>
+<h2 id="所有支持的命令"><a href="#所有支持的命令" class="headerlink" title="所有支持的命令"></a>所有支持的命令</h2><p>这是 <code>2.1.0</code> 版本中的所有命令，可能未必准确，以脚本中的帮助信息为准。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">常用:</span><br><span class="line">  c (clean) 	 执行 hexo clean</span><br><span class="line">  s (server) 	 执行 hexo server</span><br><span class="line">  g (generate) 	 执行 hexo generate</span><br><span class="line">  d (deploy) 	 执行 hexo deploy</span><br><span class="line">  cs  		 执行 c, s 的组合</span><br><span class="line">  cg  		 执行 c, g 的组合</span><br><span class="line">  cgd  		 执行 c, g, d 的组合，然后提交代码</span><br><span class="line"></span><br><span class="line">安装:</span><br><span class="line">  i (install) 	 用于安装的命令，下面是install命令的参数:</span><br><span class="line">  		 n (node)       安装node.js环境</span><br><span class="line">  		 h (hexo)       安装hexo环境(npm install hexo-cli -g)</span><br><span class="line">  		 b (blog)       搭建博客(hexo init, npm install)</span><br><span class="line">  		 d (dependency) 安装依赖包(npm install)</span><br><span class="line">  		 v (volantis)   下载并应用「Volantis」主题</span><br><span class="line"></span><br><span class="line">自动:</span><br><span class="line">  init 		 自动检查并安装所有需要的环境，然后搭建并启动博客。👍🏼</span><br><span class="line">  vut 		 下载并运行「Volantis」主题的单元测试。</span><br><span class="line"></span><br><span class="line">脚本:</span><br><span class="line">  cd + &#96;path&#96; 	 选择路径</span><br><span class="line">  docs  	 查看文档(https:&#x2F;&#x2F;xaoxuu.com&#x2F;wiki&#x2F;hexo.sh)</span><br><span class="line">  gh (github) 	 GitHub页面(https:&#x2F;&#x2F;github.com&#x2F;xaoxuu&#x2F;hexo.sh)</span><br><span class="line">  u (update) 	 更新脚本文件(当前版本：2.1.0)</span><br></pre></td></tr></table></figure>
+
+  
+
+
+  </article>
+  
+
+
+  
+
+  <div class='related-wrap md' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body utterances'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="utterances" repo="wejudging/weijiajin.com-comments" issue-term="hexo.sh" theme="github-light"></div>
+
+    </div>
+  </div>
+
+
+
+
+      
+<footer class="page-footer fs12"><hr><div><p>本站由 <a href="https://weijiajin.com/">@weijiajin</a> 创建,您可以在 <a target="_blank" rel="noopener" href="https://github.com/wejudging/wejudging.github.io">GitHub</a> 找到本站源码。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" viewBox="0 0 1228 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2849"><path d="M0 0m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.3902l-973.901995 0q-97.390199 0-97.390199-97.3902l0 0q0-97.390199 97.390199-97.390199Z" p-id="2850"></path><path d="M0 389.560798m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.3902l-973.901995 0q-97.390199 0-97.390199-97.3902l0 0q0-97.390199 97.390199-97.390199Z" p-id="2851"></path><path d="M0 779.121596m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.390199l-973.901995 0q-97.390199 0-97.390199-97.390199l0 0q0-97.390199 97.390199-97.390199Z" p-id="2852"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script')
+      script.src = src
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.0.1';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',
+    sitesjs: '/js/plugins/sites.js',
+    friendsjs: '/js/plugins/friends.js',
+  };
+
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper/swiper-bundle.min.css","js":"https://unpkg.com/swiper/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function utterances(){
+    if(!document.getElementById("utterances"))return;
+    setTimeout(function() {
+      var checkUtterances = setInterval(function () {
+        var el = document.getElementById("utterances");
+        if (!el) return
+        clearInterval(checkUtterances)
+        try {
+          el.innerHTML="";
+        } catch (error) {}
+        var script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        const keys = ['repo', 'issue-term', 'issue-number', 'theme', 'label', 'crossorigin'];
+        keys.forEach((key, i) => {
+          if (el.attributes[key] && el.attributes[key].value) {
+            script.setAttribute(key, el.attributes[key].value);
+          }
+        });
+        el.appendChild(script);
+       }, 200)
+    });
+  }
+  utterances();
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

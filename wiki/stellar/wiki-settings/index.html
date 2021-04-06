@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 5.4.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Stellar：如何使用半自动化的文档系统 - weijiajin</title>
+
+  
+  <meta name="description" content="自动意味着 Stellar 可以自动找到一个项目的所有文档分页，生成一个目录树，半自动意味着您可以手动指定顺序、标题、分组，而非依赖文件路径、文件名来排序和显示。
+创建一个项目在 blog/source/ 文件夹中创建一个 wiki 文件夹，在其中放入各个项目的文档。以 Stellar 项目为...">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left'>
+    
+
+<header class='header'>
+  <div class='logo-wrap'>
+  
+    <a class='avatar' href='/about/'><img no-lazy src='/images/logo.svg'/></a>
+  
+  
+    <a class='title' href='/'>weijiajin</a>
+  
+</div>
+
+  <nav class="menu dis-select"><a class="nav-item" href="/">文章</a><a class="nav-item active" href="/wiki/">项目</a><a class="nav-item" href="/notes/">笔记</a><a class="nav-item" href="/about/">更多</a></nav>
+</header>
+
+<div class='widgets'>
+  
+    
+      
+      
+
+  <div class='widget-wrap' id='toc'>
+    <div class='widget-header h4 dis-select'>
+      <span class='name'>
+        
+          Stellar
+        
+      </span>
+    </div>
+    <div class='widget-body fs14 wiki'>
+      
+        
+        
+          
+            
+              <div class='doc-tree'>
+                <a class='doc-tree-link' href="/wiki/stellar/index.html"><span class="toc-text">快速开始您的博客之旅</span></a>
+              </div>
+            
+          
+            
+              <div class='doc-tree'>
+                <a class='doc-tree-link' href="/wiki/stellar/theme-settings/index.html"><span class="toc-text">个性化您的主题</span></a>
+              </div>
+            
+          
+            
+              <div class='doc-tree'>
+                <a class='doc-tree-link' href="/wiki/stellar/pages/index.html"><span class="toc-text">编写文章以及独立页面</span></a>
+              </div>
+            
+          
+            
+              <div class='doc-tree active'>
+                <a class='doc-tree-link active' href="/wiki/stellar/wiki-settings/index.html"><span class="toc-text">如何使用半自动化的文档系统</span></a>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%A1%B9%E7%9B%AE"><span class="toc-text">创建一个项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%BB%E9%A1%B5"><span class="toc-text">项目主页</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E5%90%A6%E6%98%BE%E7%A4%BA%E5%B0%81%E9%9D%A2"><span class="toc-text">是否显示封面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%E6%8E%92%E5%BA%8F"><span class="toc-text">项目文档排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%96%87%E6%A1%A3%E5%88%86%E7%B1%BB"><span class="toc-text">项目文档分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-wiki-%E8%B7%AF%E5%BE%84"><span class="toc-text">修改 wiki 路径</span></a></li></ol>
+              </div>
+            
+          
+            
+              <div class='doc-tree'>
+                <a class='doc-tree-link' href="/wiki/stellar/tag-plugins/index.html"><span class="toc-text">使用标签插件增强阅读体验</span></a>
+              </div>
+            
+          
+        
+      
+    </div>
+  </div>
+
+
+    
+  
+    
+      
+      
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <div class='widget-wrap' id='related'>
+        <div class='widget-header h4 dis-select'>
+          <span class='name'>更多博客主题</span>
+        </div>
+        <div class='widget-body fs14'>
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                <div class='post-title'>
+                  <a href="/wiki/volantis/index.html">
+                    Volantis
+                  </a>
+                </div>
+              
+            
+          
+            
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              
+                <div class='post-title'>
+                  <a href="/wiki/resume/index.html">
+                    Resume
+                  </a>
+                </div>
+              
+            
+          
+        </div>
+      </div>
+    
+  
+
+
+    
+  
+</div>
+<footer class="footer"><div class="social-wrap dis-select"><a class="social" href="mailto:wejudging@gmail.com" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/gmail.svg"/></a><a class="social" href="https://github.com/wejudging" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/cf1ae151f9e83.svg"/></a><a class="social" href="https://volantis.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/volantis.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+  <div class='bread-nav fs12'>
+  
+    
+    <div id='breadcrumb'>
+      <a class='cap breadcrumb' href='/'>主页</a>
+      <span class="sep"></span>
+      
+        <a class='cap breadcrumb' href='/wiki/'>项目</a>
+      
+      
+        <span class="sep"></span>
+        <a class='cap breadcrumb' href='/wiki/categories/hexo-themes/index.html'>博客主题</a>
+      
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <span class="sep"></span>
+        <a class='cap breadcrumb' href='/wiki/stellar/index.html'>Stellar</a>
+      
+    </div>
+    <div id='post-meta'>
+      更新于&nbsp;<time datetime='2021-04-06T03:17:18.890Z'>2021-04-06</time>
+    </div>
+  
+  </div>
+
+
+  <article class='content md wiki'>
+  <h1 class="article-title"><span>如何使用半自动化的文档系统</span></h1>
+  <p>自动意味着 Stellar 可以自动找到一个项目的所有文档分页，生成一个目录树，半自动意味着您可以手动指定顺序、标题、分组，而非依赖文件路径、文件名来排序和显示。</p>
+<h2 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h2><p>在 <code>blog/source/</code> 文件夹中创建一个 <code>wiki</code> 文件夹，在其中放入各个项目的文档。以 Stellar 项目为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blog&#x2F;source&#x2F;wiki&#x2F;stellar&#x2F;index.md</span><br></pre></td></tr></table></figure>
+
+<p>设置布局模板和项目名称：</p>
+<figure class="highlight yaml"><figcaption><span>blog/source/wiki/stellar/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">wiki</span>  <span class="comment"># 使用wiki布局模板</span></span><br><span class="line"><span class="attr">wiki:</span> <span class="string">Stellar</span> <span class="comment"># 这是项目名</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">这是分页标题</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>建议用这个文件作为项目的主页，并在文件夹内创建其它分页。</p>
+<h2 id="项目主页"><a href="#项目主页" class="headerlink" title="项目主页"></a>项目主页</h2><p>Stellar 会把具有 <code>description</code> 的项目识别为项目主页。例如：</p>
+<figure class="highlight yaml"><figcaption><span>blog/source/wiki/stellar/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">wiki</span></span><br><span class="line"><span class="attr">wiki:</span> <span class="string">Stellar</span></span><br><span class="line"><span class="attr">order:</span> <span class="number">-202102</span></span><br><span class="line"><span class="attr">seo_title:</span> <span class="string">一个实用简约主义的</span> <span class="string">Hexo</span> <span class="string">主题</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">快速开始您的博客之旅</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">这是一个全新的主题，拥有精心设计的样式和强大的功能。目前还没开发完毕，旧的文章正在逐步迁移至新主题。</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="是否显示封面"><a href="#是否显示封面" class="headerlink" title="是否显示封面"></a>是否显示封面</h3><p>项目可以显示一个全屏封面，封面占据一个屏幕的高度，会居中依次显示项目的 logo、标题、描述。开启项目封面方法如下：</p>
+<figure class="highlight yaml"><figcaption><span>blog/source/wiki/stellar/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">cover:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">logo:</span></span><br><span class="line">  <span class="attr">src:</span> <span class="string">https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/icon.svg</span></span><br><span class="line">  <span class="attr">small:</span> <span class="string">120px</span></span><br><span class="line">  <span class="attr">large:</span> <span class="string">240px</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>如果 logo 中已经包含了项目标题，可以这样设置不显示项目标题：</p>
+<figure class="highlight yaml"><figcaption><span>blog/source/wiki/stellar/index.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">cover:</span> [<span class="string">logo</span>, <span class="string">description</span>]</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="项目文档排序"><a href="#项目文档排序" class="headerlink" title="项目文档排序"></a>项目文档排序</h2><p>多个项目之间、一个项目的多个文档分页之间都以 <code>order</code> 的值作为排序依据，数字越小越靠前。</p>
+<h2 id="项目文档分类"><a href="#项目文档分类" class="headerlink" title="项目文档分类"></a>项目文档分类</h2><p>如果您有很多项目，有些项目是属于同一个分组的，可以创建一个文件来描述它们的关系，文件要使用 <code>index</code> 布局模板：</p>
+<figure class="highlight yaml"><figcaption><span>blog/wiki/categories/hexo-themes.md</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">index</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">博客主题</span></span><br><span class="line"><span class="attr">order:</span> <span class="number">3</span></span><br><span class="line"><span class="attr">wiki:</span> [<span class="string">Stellar</span>, <span class="string">Volantis</span>]</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+
+<p>有了这个文件，项目文档就可以像文章一样进行分类筛选浏览。</p>
+<h2 id="修改-wiki-路径"><a href="#修改-wiki-路径" class="headerlink" title="修改 wiki 路径"></a>修改 wiki 路径</h2><p>在根目录中添加 <code>wiki_dir</code> 指定 Wiki 主页的路径：</p>
+<figure class="highlight yaml"><figcaption><span>blog/_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">wiki_dir:</span> <span class="string">wiki</span></span><br></pre></td></tr></table></figure>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body"><div class="post-title h2"><a href="/wiki/stellar/tag-plugins/index.html">使用标签插件增强阅读体验</a></div><div class="post-title fs14"><a href="/wiki/stellar/pages/index.html">上一篇：编写文章以及独立页面</a></div></section></div>
+
+  
+
+  <div class='related-wrap md' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body utterances'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="utterances" repo="xaoxuu/hexo-theme-stellar" issue-term="Q & A" theme="github-light"></div>
+
+    </div>
+  </div>
+
+
+
+
+      
+<footer class="page-footer fs12"><hr><div><p>本站由 <a href="https://weijiajin.com/">@weijiajin</a> 创建,您可以在 <a target="_blank" rel="noopener" href="https://github.com/wejudging/wejudging.github.io">GitHub</a> 找到本站源码。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" viewBox="0 0 1228 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2849"><path d="M0 0m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.3902l-973.901995 0q-97.390199 0-97.390199-97.3902l0 0q0-97.390199 97.390199-97.390199Z" p-id="2850"></path><path d="M0 389.560798m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.3902l-973.901995 0q-97.390199 0-97.390199-97.3902l0 0q0-97.390199 97.390199-97.390199Z" p-id="2851"></path><path d="M0 779.121596m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.390199l-973.901995 0q-97.390199 0-97.390199-97.390199l0 0q0-97.390199 97.390199-97.390199Z" p-id="2852"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script')
+      script.src = src
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.0.1';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',
+    sitesjs: '/js/plugins/sites.js',
+    friendsjs: '/js/plugins/friends.js',
+  };
+
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper/swiper-bundle.min.css","js":"https://unpkg.com/swiper/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function utterances(){
+    if(!document.getElementById("utterances"))return;
+    setTimeout(function() {
+      var checkUtterances = setInterval(function () {
+        var el = document.getElementById("utterances");
+        if (!el) return
+        clearInterval(checkUtterances)
+        try {
+          el.innerHTML="";
+        } catch (error) {}
+        var script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        const keys = ['repo', 'issue-term', 'issue-number', 'theme', 'label', 'crossorigin'];
+        keys.forEach((key, i) => {
+          if (el.attributes[key] && el.attributes[key].value) {
+            script.setAttribute(key, el.attributes[key].value);
+          }
+        });
+        el.appendChild(script);
+       }, 200)
+    });
+  }
+  utterances();
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
