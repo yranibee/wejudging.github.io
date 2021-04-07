@@ -20,9 +20,9 @@ sidebar:
     title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
   menu:
     post: '[btn.blog](/)'
-    notes: '[btn.notes](/notes/)'
+    notes: '[笔记](/notes/)'
     wiki: '[btn.wiki](/wiki/)'
-    more: '[btn.more](/more/)'
+    more: '[更多](/more/)'
   # Sidebar widgets
   widgets:
     # default layout in home/wiki/categories/tags/archives pages
