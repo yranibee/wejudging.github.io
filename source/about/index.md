@@ -71,25 +71,33 @@ header: false
 
 
 ## 近期日程
-XXXXXXXXX
+
 {% timeline %}
 
-{% timenode XXXXXXXX %}
+{% timenode 4月10日 %}
 
-XXXXXXXXXXXX
-
-{% endtimenode %}
-
-{% timenode XXXXXX %}
-
-- XXXXXXXX
-- XXXXXXXXX
+去南京玩。
 
 {% endtimenode %}
 
-{% timenode XXXXXXXX %}
+{% timenode 4月 %}
 
-XXXXXXXXXXX
+-  重构weijiajin.com
+-  每日背单词
+-  学习高数
+-  学习计算机组成原理
+-  学习数据结构
+-  学习操作系统
+
+{% endtimenode %}
+
+{% timenode 3月 %}
+
+-  每日背单词
+-  学习高数
+-  学习计算机组成原理
+-  学习数据结构
+-  学习操作系统
 
 {% endtimenode %}
 
