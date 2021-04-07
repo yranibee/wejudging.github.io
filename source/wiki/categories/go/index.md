@@ -1,7 +1,7 @@
 ---
 layout: index
 order: 2
-title: go
+title: GO
 wiki: []
 ---
 

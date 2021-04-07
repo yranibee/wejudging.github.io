@@ -1,7 +1,7 @@
 ---
 layout: index
 order: 4
-title: python
+title: PYTHON
 wiki: []
 ---
 

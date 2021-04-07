@@ -1,7 +1,7 @@
 ---
 layout: index
 order: 3
-title: java
+title: JAVA
 wiki: []
 ---
 
