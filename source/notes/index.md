@@ -1,11 +1,11 @@
 ---
 robots: noindex,nofollow
 sitemap: false
-menu_id: more
-seo_title: 收藏夹
-comment_id: '留言板'
-header: false
+menu_id: notes
+layout: wiki
+wiki: Notes
 ---
 
-{% sites %}
+{% link https://developer.aliyun.com/mirror/ 阿里云官方镜像站 %}
 
+{% link https://mirrors.tuna.tsinghua.edu.cn 清华大学开源软件镜像站 %}
