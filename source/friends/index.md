@@ -7,6 +7,7 @@ toc_title: 友链索引
 comment_title: 快来交换友链吧～
 comment_id: '留言板'
 header: false
+breadcrumb: false
 ---
 
 {% friends %}
