@@ -21,7 +21,7 @@ sidebar:
   menu:
     post: '[btn.blog](/)'
     wiki: '[btn.wiki](/wiki/)'
-    notes: '[笔记](/notes/)'
+    bookmark: '[书签](/bookmark/)'
     more: '[更多](/more/)'
   # Sidebar widgets
   widgets:

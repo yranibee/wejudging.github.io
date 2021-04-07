@@ -1,9 +1,8 @@
 ---
 robots: noindex,nofollow
 sitemap: false
-menu_id: more
+menu_id: bookmark
 seo_title: 收藏夹
-comment_id: '留言板'
 header: false
 ---
 
