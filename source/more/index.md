@@ -19,7 +19,7 @@ header: false
 
 XXXXXXXXX
 
-{% navbar [文章](/) [项目](/wiki/)[笔记](/notes/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
+{% navbar [文章](/) [项目](/wiki/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
 
 {% endabout %}
 
@@ -27,7 +27,7 @@ XXXXXXXXX
 XXXXXXXXX
 {% timeline %}
 
-{% timenode XXXXXXXX 5.0 %}
+{% timenode XXXXXXXX %}
 
 XXXXXXXXXXXX
 
