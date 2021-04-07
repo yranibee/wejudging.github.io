@@ -76,7 +76,7 @@ header: false
 
 {% timenode 4月10日 %}
 
-去南京玩。
+- 去南京玩。
 
 {% endtimenode %}
 
