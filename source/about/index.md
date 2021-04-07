@@ -82,7 +82,7 @@ XXXXXXXXXXX
 
 {% endtabs %}
 
-##  我的GitHub
+##  关于我
 - 😄**后端** C,C++,Java,Python,go
 - 😃**前端** HTML,CSS,JavaScript, vue
 - 😆**数据库** MySQL
@@ -91,12 +91,3 @@ XXXXXXXXXXX
 - 😧**都不精通**
 
 {% ghcard wejudging %}
-
----
-
-*近期更新*
-
-
-[![wejudging's contribution graph as a Game of Life](https://github4life.herokuapp.com/wejudging.gif)](https://github4life.herokuapp.com/wejudging)
-
-
