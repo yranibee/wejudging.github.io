@@ -84,4 +84,4 @@ XXXXXXXXXXX
 
 ## 关于本站
 
-XXXXXXXXXXXX
+本站记录和分享我的喜欢，我的热爱，我的生活。
