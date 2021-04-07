@@ -21,30 +21,7 @@ header: false
 
 {% endabout %}
 
-## 近期日程
-XXXXXXXXX
-{% timeline %}
 
-{% timenode XXXXXXXX %}
-
-XXXXXXXXXXXX
-
-{% endtimenode %}
-
-{% timenode XXXXXX %}
-
-- XXXXXXXX
-- XXXXXXXXX
-
-{% endtimenode %}
-
-{% timenode XXXXXXXX %}
-
-XXXXXXXXXXX
-
-{% endtimenode %}
-
-{% endtimeline %}
 
 ## 兴趣爱好
 
@@ -82,7 +59,7 @@ XXXXXXXXXXX
 
 {% endtabs %}
 
-##  关于我
+##  专业技术
 - 😄**后端** C,C++,Java,Python,go
 - 😃**前端** HTML,CSS,JavaScript, vue
 - 😆**数据库** MySQL
@@ -91,3 +68,29 @@ XXXXXXXXXXX
 - 😧**都不精通**
 
 {% ghcard wejudging %}
+
+
+## 近期日程
+XXXXXXXXX
+{% timeline %}
+
+{% timenode XXXXXXXX %}
+
+XXXXXXXXXXXX
+
+{% endtimenode %}
+
+{% timenode XXXXXX %}
+
+- XXXXXXXX
+- XXXXXXXXX
+
+{% endtimenode %}
+
+{% timenode XXXXXXXX %}
+
+XXXXXXXXXXX
+
+{% endtimenode %}
+
+{% endtimeline %}
