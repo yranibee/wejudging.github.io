@@ -82,13 +82,21 @@ XXXXXXXXXXX
 
 {% endtabs %}
 
-## 关于我
-
-{% ghcard wejudging %}
-
+## 我的GitHub
 - 😄**后端** C,C++,Java,Python,go
 - 😃**前端** HTML,CSS,JavaScript, vue
 - 😆**数据库** MySQL
 - 😝**框架** SpringBoot
 - 😛**设计** Photoshop,Final Cut Pro
 - 😧**都不精通**
+
+{% ghcard wejudging %}
+
+---
+
+*近期更新*
+
+
+[![wejudging's contribution graph as a Game of Life](https://github4life.herokuapp.com/wejudging.gif)](https://github4life.herokuapp.com/wejudging)
+
+
