@@ -2,7 +2,7 @@
 robots: noindex,nofollow
 sitemap: false
 menu_id: bookmark
-seo_title: 收藏夹
+seo_title: 书签
 header: false
 ---
 
