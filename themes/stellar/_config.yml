@@ -113,6 +113,10 @@ footer:
        url: https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62
      - icon: '<img src="/images/volantis.svg"/>'
        url: https://volantis.weijiajin.com
+     - icon: '<img src="/images/resume.svg"/>'
+       url: https://resume.weijiajin.com
+       
+       
   license: #'[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
   source: '[GitHub](https://github.com/wejudging/wejudging.github.io)'
 
