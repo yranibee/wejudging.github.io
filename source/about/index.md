@@ -3,7 +3,7 @@ robots: 'index,nofollow'
 menu_id: more
 seo_title: 关于
 sidebar: [welcome, toc]
-toc_title: 关于我
+toc_title: 关于
 comment_title: 来过，就留下您的脚印吧～
 comment_id: '留言板'
 comments: true
@@ -82,7 +82,7 @@ XXXXXXXXXXX
 
 {% endtabs %}
 
-## 我的GitHub
+##  我的GitHub
 - 😄**后端** C,C++,Java,Python,go
 - 😃**前端** HTML,CSS,JavaScript, vue
 - 😆**数据库** MySQL
