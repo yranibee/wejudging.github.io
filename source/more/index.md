@@ -17,8 +17,6 @@ header: false
 
 **如果宇宙中真有什么终极的逻辑，那就是我们终有一天会在舰桥上重逢，直到生命终结。**
 
-XXXXXXXXX
-
 {% navbar [文章](/) [项目](/wiki/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
 
 {% endabout %}
