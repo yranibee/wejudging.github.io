@@ -82,6 +82,13 @@ XXXXXXXXXXX
 
 {% endtabs %}
 
-## 关于本站
+## 关于我
 
-本站记录和分享我的喜欢，我的热爱，我的生活。
+{% ghcard wejudging %}
+
+- 😄**后端** C,C++,Java,Python,go
+- 😃**前端** HTML,CSS,JavaScript, vue
+- 😆**数据库** MySQL
+- 😝**框架** SpringBoot
+- 😛**设计** Photoshop,Final Cut Pro
+- 😧**都不精通**
