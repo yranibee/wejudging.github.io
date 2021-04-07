@@ -45,10 +45,10 @@ header: false
 请添加本站到您的友链中，如果您也使用 issue 作为友链源，只需要告知您的友链源仓库即可。
 
 ```yaml
-title: xaoxuu
-avatar: https://cdn.jsdelivr.net/gh/cdn-x/xaoxuu/avatar/rect-256@2x.png
-url: https://xaoxuu.com
-screenshot: https://i.loli.net/2020/08/21/VuSwWZ1xAeUHEBC.jpg
+title: weijiajin
+avatar: https://weijiajin.com/images/logo.svg
+url: https://weijiajin.com
+screenshot: https://cdn.jsdelivr.net/gh/feelheart7/CDN@1.0/blog/images/index.png
 ```
 
 待管理员审核通过，添加了 `active` 标签后，回来刷新即可生效。
