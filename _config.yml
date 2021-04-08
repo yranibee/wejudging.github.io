@@ -119,4 +119,3 @@ inject:
     - <meta name="theme-color" content="#ffffff">
   script:
     - https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js
-  
