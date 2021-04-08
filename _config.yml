@@ -118,5 +118,8 @@ inject:
     - <meta name="msapplication-TileColor" content="#2d89ef">
     - <meta name="msapplication-config" content="#2d89ef">
     - <meta name="theme-color" content="#ffffff">
+    
+import:
   script:
-    - <script src='https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js'></script>
+    - "<script src='https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_click.js'></script>"
+  
