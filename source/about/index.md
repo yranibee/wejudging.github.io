@@ -73,7 +73,16 @@ header: false
 ## 近期日程
 
 {% timeline %}
+{% timenode 4月16日 %}
 
+- 准备学习。
+
+{% endtimenode %}
+{% timenode 4月16日 %}
+
+- 确定考研学校 东南大学-网络空间安全学院（086）电子信息（专业学位）。
+
+{% endtimenode %}
 {% timenode 4月10日 %}
 
 - 去南京玩。
