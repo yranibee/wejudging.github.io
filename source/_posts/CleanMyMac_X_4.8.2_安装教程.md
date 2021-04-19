@@ -1,5 +1,5 @@
 ---
-title: CleanMyMac X 4.8.2 安装教程
+title: CleanMyMac_X_4.8.2_安装教程
 date: 2020-04-19 
 tags:
 categories: mac
