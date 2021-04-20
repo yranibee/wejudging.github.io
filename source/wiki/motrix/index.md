@@ -6,7 +6,7 @@ seo_title: 一款全能的下载工具
 title: Motrix
 cover: true
 logo:
-  src: https://github.com/agalwood/Motrix/raw/master/static/512x512.png
+  src: /images/motrix.png
   small: 120px
   large: 240px
 description: 一款全能的下载工具。
@@ -97,7 +97,7 @@ Motrix 在 Linux 中首次启动可能需要使用 `sudo` 运行，因为可能�
 
 ## 🖥 应用界面
 
-![motrix-screenshot-task-cn.png](https://cdn.nlark.com/yuque/0/2020/png/129147/1589782239990-fecb9065-19ac-4c35-938b-0be45621ca3a.png)
+![motrix-screenshot-task-cn.png](/images/motrix2.png)
 
 ## ⌨️ 本地开发
 
