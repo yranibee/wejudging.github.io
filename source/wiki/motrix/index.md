@@ -12,20 +12,11 @@ logo:
 description: 一款全能的下载工具。
 ---
 # Motrix
-
-<a href="https://motrix.app">
-  <img src="https://github.com/agalwood/Motrix/raw/master/static/512x512.png" width="256" alt="App Icon" />
-</a>
-
 ## 一款全能的下载工具
 
-[![GitHub release](https://img.shields.io/github/v/release/agalwood/Motrix.svg)](https://github.com/agalwood/Motrix/releases) ![Build/release](https://github.com/agalwood/Motrix/workflows/Build/release/badge.svg) ![Total Downloads](https://img.shields.io/github/downloads/agalwood/Motrix/total.svg) ![Support Platforms](https://camo.githubusercontent.com/a50c47295f350646d08f2e1ccd797ceca3840e52/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706c6174666f726d2d6d61634f5325323025374325323057696e646f77732532302537432532304c696e75782d6c69676874677265792e737667)
+[![GitHub release](https://img.shields.io/github/v/release/agalwood/Motrix.svg)](https://github.com/agalwood/Motrix/releases) 
 
-[English](./README.md) | 简体中文
-
-我是个兴趣使然的桌面应用开发者🤓，利用搬砖之余开发了 Motrix。
-
-Motrix 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链等资源。它的界面简洁易用，希望大家喜欢 👻。
+Motrix 是一款全能的下载工具，支持下载 HTTP、FTP、BT、磁力链等资源。它的界面简洁易用👻。
 
 ✈️ 去 [官网](https://motrix.app/zh-CN) 逛逛  |  📖 查看 [帮助手册](http://motrix.app/support/issues)
 
@@ -74,13 +65,6 @@ sudo apt --fix-broken install
 
 #### Snap
 Motrix 已经上架 [Snapcraft](https://snapcraft.io/motrix) ，Ubuntu 用户推荐从 Snap 商店下载。
-
-v1.5.10 提示
-
-系统托盘可能无法正常显示指示器，导致退出应用程序不方便。
-请取消勾选 偏好设置——基本设置——隐藏应用程序菜单（仅限Windows和Linux），点击保存并应用。然后点击 "文件 "菜单中的 "退出"，退出应用程序。
-
-请更新到 v1.5.12 及以上版本，可以使用键盘组合快捷键 <kbd>Ctrl</kbd> + <kbd>q</kbd> 快速退出应用。
 
 #### AUR
 对于 Arch Linux 用户，可以使用 [aur](https://aur.archlinux.org/packages/motrix/) 安装 Motrix，感谢维护者 [weearc](https://github.com/weearc)。
