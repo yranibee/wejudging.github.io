@@ -1,7 +1,7 @@
 ---
 layout: index
 order: 1
-title: C++
-wiki: []
+title: 开源
+wiki: [motrix]
 ---
 

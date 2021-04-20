@@ -1,13 +1,20 @@
 ---
-title: Motrix
-date: 2021-04-20 14:12:39
-tags:
-categories: mac
+layout: wiki
+wiki: Motrix
+order: -202102
+seo_title: 一款全能的下载工具
+title: 一款全能的下载工具
+cover: true
+logo:
+  src: https://github.com/agalwood/Motrix/raw/master/static/512x512.png
+  small: 120px
+  large: 240px
+description: 一款全能的下载工具。
 ---
 # Motrix
 
 <a href="https://motrix.app">
-  <img src="./static/512x512.png" width="256" alt="App Icon" />
+  <img src="https://github.com/agalwood/Motrix/raw/master/static/512x512.png" width="256" alt="App Icon" />
 </a>
 
 ## 一款全能的下载工具
