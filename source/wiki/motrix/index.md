@@ -3,7 +3,7 @@ layout: wiki
 wiki: Motrix
 order: -202102
 seo_title: 一款全能的下载工具
-title: 一款全能的下载工具
+title: Motrix
 cover: true
 logo:
   src: https://github.com/agalwood/Motrix/raw/master/static/512x512.png
@@ -11,7 +11,6 @@ logo:
   large: 240px
 description: 一款全能的下载工具。
 ---
-# Motrix
 ## 一款全能的下载工具
 
 [![GitHub release](https://img.shields.io/github/v/release/agalwood/Motrix.svg)](https://github.com/agalwood/Motrix/releases) 
