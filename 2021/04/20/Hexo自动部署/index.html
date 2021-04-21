@@ -21,10 +21,13 @@
 
   
   <meta name="description" content="Hexo首先我们先要在本地确保 Hexo 是可以正确运行的，比如：
-12hexo cleanhexo deploy
+hexo clean
+hexo deploy
 
-至于如何设置和使用Hexo，请参考 https://hexo.io/
-此外Hexo 同时部署在GitHub Pages。至于如何使用GitHub Pages部署自己的网站，请参...">
+确认 _config.yml 文件中有类似如下的 GitHub Pages 配置：
+deploy:
+  type: git
+  repository: https://githu...">
 
   <!-- feed -->
   
@@ -137,17 +140,17 @@
 <article class='content md post'>
 <h1 class="article-title"><span>GitHub Actions 实现 Hexo 自动部署</span></h1>
 <h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>首先我们先要在本地确保 Hexo 是可以正确运行的，比如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>至于如何设置和使用<code>Hexo</code>，请参考 <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></p>
-<p>此外Hexo 同时部署在<code>GitHub Pages</code>。至于如何使用<code>GitHub Pages</code>部署自己的网站，请参考：<a target="_blank" rel="noopener" href="https://pages.github.com/">https://pages.github.com/</a></p>
-<p>确认<code>_config.yml</code>文件中有类似如下的<code>GitHub Pages</code>配置：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/wejudging/wejudging.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-
+<pre><code>hexo clean
+hexo deploy
+</code></pre>
+<p>确认 _config.yml 文件中有类似如下的 GitHub Pages 配置：</p>
+<pre><code>deploy:
+  type: git
+  repository: https://github.com/wejudging/wejudging.github.io.git
+  branch: main
+</code></pre>
 <blockquote>
-<blockquote>
-<p>注意：请将<code>repository</code>修改为你自己的仓库地址.</p>
-</blockquote>
+<p>注意：请将 repository 修改为你自己的仓库地址。</p>
 </blockquote>
 <h3 id="生成秘钥"><a href="#生成秘钥" class="headerlink" title="生成秘钥"></a>生成秘钥</h3><p>如果<code>Hexo</code>可以正常部署到<code>GitHub</code>，那么原来的秘钥是可以正常使用的;<br>但是私钥还要用于不同的服务器的<code>SSH</code> 访问和其他身份验证，因此生成一个新的秘钥对来专门部署<code>Hexo</code>。</p>
 <p>以下为<code>macOS</code>下的操作，<code>Linux</code>下操作方法相同：</p>
