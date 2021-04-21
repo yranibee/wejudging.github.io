@@ -1,5 +1,6 @@
 ---
 title: CleanMyMac_X_4.8.2_安装教程
+cover: /images/文章图片/CleanMyMac_X_4.8.2_安装教程/8.png
 date: 2021-04-19 21:18:30
 categories: mac
 ---
