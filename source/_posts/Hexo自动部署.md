@@ -1,6 +1,6 @@
 ---
 title: GitHub Actions 实现 Hexo 自动部署
-cover: /imagws/actions.png
+cover: /images/actions.png
 date: 2021-04-21
 tags: [Hexo, GitHub]
 categories: [笔记]
@@ -50,14 +50,20 @@ ssh-keygen -t rsa -b 4096 -C "Hexo Deploy Key" -f github-deploy-key -N ""
 * 把公钥放到 GitHub Pages 对应的代码仓库里面，用于 Hexo 部署时的写入工作。
 
 #### 配置私钥
-首先在`GitHub`上打开保存`Hexo`的仓库，访问 `Settings -> Secrets`，然后选择 `New secret`;
-名字部分填写：`HEXO_DEPLOY_KEY`，注意大小写，这个后面的 `GitHub Actions Workflow` 要用到;
-在 `Value`的部分填入 github-deploy-key 中的内容。
+- 首先在`GitHub`上打开保存`Hexo`的仓库，访问 `Settings -> Secrets`，然后选择 `New secret`;
+- 名字部分填写：`HEXO_DEPLOY_KEY`，注意大小写，这个后面的 `GitHub Actions Workflow` 要用到;
+- 在 `Value`的部分填入 github-deploy-key 中的内容。
 
 #### 添加公钥
-接下来我们需要访问存放网页的仓库，也就是`Hexo`部署以后的仓库，访问 Settings -> Deploy keys;
 
+- 接下来我们需要访问存放网页的仓库，也就是`Hexo`部署以后的仓库，访问 `Settings -> Deploy keys`;
+- 按 `Add deploy key` 来添加一个新的公钥；
+- 在 `Title`中输入：`HEXO_DEPLOY_PUB` 字样，当然也可以填写其它自定义的名字;
+- 在 `Key` 中粘贴 `github-deploy-key.pub`文件的内容;
 
+>> 注意：一定要勾选 Allow write access 来打开写权限，否则无法写入会导致部署失败。
+
+### 创建 `Workflow`
 
 
 
