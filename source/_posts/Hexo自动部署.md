@@ -5,12 +5,9 @@ date: 2021-04-21
 tags: [Hexo, GitHub]
 categories: [笔记]
 ---
-### 背景
-通过`GitHub Actions` 实现`Hexo`自动部署，解决hexo没有办法在线发布和编辑文章的痛点。
 
-
-### `Hexo`
-首先我们先要在本地确保`Hexo`是可以正确运行的，比如：
+### Hexo
+首先我们先要在本地确保 Hexo 是可以正确运行的，比如：
 ```shell
 hexo clean
 hexo deploy
