@@ -9,9 +9,9 @@ function layoutDiv() {
     wrapper += markdown(__('footer.license', theme.footer.license));
   }
   if (source) {
-    wrapper += markdown(__('footer.info_open_source', author, source));
+    wrapper += markdown(__('footer.info_open_source', source, author));
   } else {
-    wrapper += markdown(__('footer.info_not_open_source',author,source));
+    wrapper += markdown(__('footer.info_not_open_source',source,author));
   }
   wrapper += '</div></footer>';
   return wrapper;
