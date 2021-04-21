@@ -20,12 +20,11 @@
   <title>GitHub Actions 实现 Hexo 自动部署 - weijiajin</title>
 
   
-  <meta name="description" content="背景通过GitHub Actions 实现Hexo自动部署，解决hexo没有办法在线发布和编辑文章的痛点。
-Hexo首先我们先要在本地确保Hexo是可以正确运行的，比如：
+  <meta name="description" content="Hexo首先我们先要在本地确保 Hexo 是可以正确运行的，比如：
 12hexo cleanhexo deploy
 
 至于如何设置和使用Hexo，请参考 https://hexo.io/
-此...">
+此外Hexo 同时部署在GitHub Pages。至于如何使用GitHub Pages部署自己的网站，请参...">
 
   <!-- feed -->
   
@@ -97,7 +96,7 @@ Hexo首先我们先要在本地确保Hexo是可以正确运行的，比如：
     <div class='widget-body fs14 post'>
       
         <div class='doc-tree active'>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="toc-text">GitHub配置秘钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%81%E9%92%A5"><span class="toc-text">配置私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-text">添加公钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Workflow"><span class="toc-text">创建 Workflow</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="toc-text">GitHub配置秘钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%81%E9%92%A5"><span class="toc-text">配置私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-text">添加公钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Workflow"><span class="toc-text">创建 Workflow</span></a></li></ol>
         </div>
       
     </div>
@@ -137,8 +136,7 @@ Hexo首先我们先要在本地确保Hexo是可以正确运行的，比如：
 
 <article class='content md post'>
 <h1 class="article-title"><span>GitHub Actions 实现 Hexo 自动部署</span></h1>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>通过<code>GitHub Actions</code> 实现<code>Hexo</code>自动部署，解决hexo没有办法在线发布和编辑文章的痛点。</p>
-<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a><code>Hexo</code></h3><p>首先我们先要在本地确保<code>Hexo</code>是可以正确运行的，比如：</p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>首先我们先要在本地确保 Hexo 是可以正确运行的，比如：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>至于如何设置和使用<code>Hexo</code>，请参考 <a target="_blank" rel="noopener" href="https://hexo.io/">https://hexo.io/</a></p>
