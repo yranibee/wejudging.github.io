@@ -1,6 +1,6 @@
 ---
 layout: wiki
-wiki: Motrix
+wiki: motrix
 order: -202102
 seo_title: 一款全能的下载工具
 title: Motrix
