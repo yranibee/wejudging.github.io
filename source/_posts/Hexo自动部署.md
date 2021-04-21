@@ -8,26 +8,19 @@ categories: [笔记]
 
 ### Hexo
 首先我们先要在本地确保 Hexo 是可以正确运行的，比如：
-```shell
-hexo clean
-hexo deploy
-```
 
-至于如何设置和使用`Hexo`，请参考 https://hexo.io/
+	hexo clean
+	hexo deploy
 
-此外Hexo 同时部署在`GitHub Pages`。至于如何使用`GitHub Pages`部署自己的网站，请参考：https://pages.github.com/
+确认 _config.yml 文件中有类似如下的 GitHub Pages 配置：
 
-确认`_config.yml`文件中有类似如下的`GitHub Pages`配置：
 
-```yml
-deploy:
-  type: git
-  repository: https://github.com/wejudging/wejudging.github.io.git
-  branch: main
-```
+	deploy:
+	  type: git
+	  repository: https://github.com/wejudging/wejudging.github.io.git
+	  branch: main
 
->> 注意：请将`repository`修改为你自己的仓库地址.
-
+> 注意：请将 repository 修改为你自己的仓库地址。
 
 ### 生成秘钥
 如果`Hexo`可以正常部署到`GitHub`，那么原来的秘钥是可以正常使用的;
