@@ -97,7 +97,7 @@ Hexo首先我们先要在本地确保Hexo是可以正确运行的，比如：
     <div class='widget-body fs14 post'>
       
         <div class='doc-tree active'>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="toc-text">GitHub配置秘钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%81%E9%92%A5"><span class="toc-text">配置私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-text">添加公钥</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="toc-text">GitHub配置秘钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%81%E9%92%A5"><span class="toc-text">配置私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-text">添加公钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Workflow"><span class="toc-text">创建 Workflow</span></a></li></ol>
         </div>
       
     </div>
@@ -163,9 +163,23 @@ Hexo首先我们先要在本地确保Hexo是可以正确运行的，比如：
 <li>把私钥放到我们存放 Hexo 原始文件的代码仓库里面，用于触发 Actions 时使用;</li>
 <li>把公钥放到 GitHub Pages 对应的代码仓库里面，用于 Hexo 部署时的写入工作。</li>
 </ul>
-<h4 id="配置私钥"><a href="#配置私钥" class="headerlink" title="配置私钥"></a>配置私钥</h4><p>首先在<code>GitHub</code>上打开保存<code>Hexo</code>的仓库，访问 <code>Settings -&gt; Secrets</code>，然后选择 <code>New secret</code>;<br>名字部分填写：<code>HEXO_DEPLOY_KEY</code>，注意大小写，这个后面的 <code>GitHub Actions Workflow</code> 要用到;<br>在 <code>Value</code>的部分填入 github-deploy-key 中的内容。</p>
-<h4 id="添加公钥"><a href="#添加公钥" class="headerlink" title="添加公钥"></a>添加公钥</h4><p>接下来我们需要访问存放网页的仓库，也就是<code>Hexo</code>部署以后的仓库，访问 Settings -&gt; Deploy keys;</p>
-
+<h4 id="配置私钥"><a href="#配置私钥" class="headerlink" title="配置私钥"></a>配置私钥</h4><ul>
+<li>首先在<code>GitHub</code>上打开保存<code>Hexo</code>的仓库，访问 <code>Settings -&gt; Secrets</code>，然后选择 <code>New secret</code>;</li>
+<li>名字部分填写：<code>HEXO_DEPLOY_KEY</code>，注意大小写，这个后面的 <code>GitHub Actions Workflow</code> 要用到;</li>
+<li>在 <code>Value</code>的部分填入 github-deploy-key 中的内容。</li>
+</ul>
+<h4 id="添加公钥"><a href="#添加公钥" class="headerlink" title="添加公钥"></a>添加公钥</h4><ul>
+<li>接下来我们需要访问存放网页的仓库，也就是<code>Hexo</code>部署以后的仓库，访问 <code>Settings -&gt; Deploy keys</code>;</li>
+<li>按 <code>Add deploy key</code> 来添加一个新的公钥；</li>
+<li>在 <code>Title</code>中输入：<code>HEXO_DEPLOY_PUB</code> 字样，当然也可以填写其它自定义的名字;</li>
+<li>在 <code>Key</code> 中粘贴 <code>github-deploy-key.pub</code>文件的内容;</li>
+</ul>
+<blockquote>
+<blockquote>
+<p>注意：一定要勾选 Allow write access 来打开写权限，否则无法写入会导致部署失败。</p>
+</blockquote>
+</blockquote>
+<h3 id="创建-Workflow"><a href="#创建-Workflow" class="headerlink" title="创建 Workflow"></a>创建 <code>Workflow</code></h3>
 </article>
 
 <div class="related-wrap" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body"><div class="post-title h2"><a href="/2021/04/20/%E8%BF%91%E6%97%A5%E9%9A%8F%E7%AC%94/">近日随笔</a></div></section></div>
