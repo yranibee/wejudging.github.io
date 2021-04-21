@@ -99,7 +99,7 @@ deploy:
     <div class='widget-body fs14 post'>
       
         <div class='doc-tree active'>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="toc-text">GitHub配置秘钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%81%E9%92%A5"><span class="toc-text">配置私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-text">添加公钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Workflow"><span class="toc-text">创建 Workflow</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo"><span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GitHub%E9%85%8D%E7%BD%AE%E7%A7%98%E9%92%A5"><span class="toc-text">GitHub配置秘钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A7%81%E9%92%A5"><span class="toc-text">配置私钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5"><span class="toc-text">添加公钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-Workflow"><span class="toc-text">创建 Workflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
         </div>
       
     </div>
@@ -175,6 +175,41 @@ hexo deploy
 <p>注意：一定要勾选 Allow write access 来打开写权限，否则无法写入会导致部署失败。</p>
 </blockquote>
 <h3 id="创建-Workflow"><a href="#创建-Workflow" class="headerlink" title="创建 Workflow"></a>创建 Workflow</h3><p><strong>在 Hexo 的仓库中创建一个新文件：.github/workflows/auto_deploy.yml，文件的内容如下:</strong></p>
+<pre><code>name: auto deploy # workflow name
+
+on:
+  [push] # 触发事件
+
+jobs:
+  build: # job1 id
+    runs-on: ubuntu-latest # 运行环境为最新版 Ubuntu
+    name: auto deploy
+    steps:
+    - name: Checkout # step1 获取源码
+      uses: actions/checkout@v1 # 使用 actions/checkout@v1
+      with: # 条件
+        submodules: true # Checkout private submodules(themes or something else). 当有子模块时切换分支？
+    - name: Setup Node.js 10.x
+      uses: actions/setup-node@master
+      with:
+        node-version: &quot;10.x&quot;
+    - name: Generate Public Files
+      run: |
+        npm i
+        npm install hexo-cli -g
+        hexo clean &amp;&amp; hexo generate
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: $&#123;&#123; secrets.HEXO_DEPLOY_KEY &#125;&#125;
+        external_repository: wejudging/wejudging.github.io
+        publish_branch: public
+        publish_dir: ./public
+        commit_message: $&#123;&#123; github.event.head_commit.message &#125;&#125;
+        user_name: &#39;github-actions[bot]&#39;
+        user_email: &#39;github-actions[bot]@users.noreply.github.com&#39;
+</code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>以上就是利用 GitHub Actions 自动部署 Hexo 到 GitHub Pages 的方法。</p>
 
 </article>
 
