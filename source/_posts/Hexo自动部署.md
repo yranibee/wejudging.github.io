@@ -52,8 +52,42 @@ categories: [笔记]
 ### 创建 Workflow
 **在 Hexo 的仓库中创建一个新文件：.github/workflows/auto_deploy.yml，文件的内容如下:**
 
+	name: auto deploy # workflow name
 
+	on:
+	  [push] # 触发事件
 
+	jobs:
+	  build: # job1 id
+	    runs-on: ubuntu-latest # 运行环境为最新版 Ubuntu
+	    name: auto deploy
+	    steps:
+	    - name: Checkout # step1 获取源码
+	      uses: actions/checkout@v1 # 使用 actions/checkout@v1
+	      with: # 条件
+	        submodules: true # Checkout private submodules(themes or something else). 当有子模块时切换分支？
+	    - name: Setup Node.js 10.x
+	      uses: actions/setup-node@master
+	      with:
+	        node-version: "10.x"
+	    - name: Generate Public Files
+	      run: |
+	        npm i
+	        npm install hexo-cli -g
+	        hexo clean && hexo generate
+	    - name: Deploy
+	      uses: peaceiris/actions-gh-pages@v3
+	      with:
+	        deploy_key: ${{ secrets.HEXO_DEPLOY_KEY }}
+	        external_repository: wejudging/wejudging.github.io
+	        publish_branch: public
+	        publish_dir: ./public
+	        commit_message: ${{ github.event.head_commit.message }}
+	        user_name: 'github-actions[bot]'
+	        user_email: 'github-actions[bot]@users.noreply.github.com'
+
+### 总结
+以上就是利用 GitHub Actions 自动部署 Hexo 到 GitHub Pages 的方法。
 
 
 
