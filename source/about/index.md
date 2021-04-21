@@ -15,7 +15,7 @@ header: false
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
-**因为遇到了温柔可爱的人，所以觉得世界可爱温柔。**
+**遇到温柔可爱的人，觉得世界也可爱温柔。**
 
 {% navbar [文章](/) [项目](/wiki/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
 
