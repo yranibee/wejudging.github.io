@@ -73,9 +73,14 @@ header: false
 ## 近期日程
 
 {% timeline %}
+{% timenode 4月20日 %}
+
+- 我想用稍晚的青春和清澈的心情，写一封言语由衷的信给我心爱姑娘。两份孤独相逢，五指张开，十指相扣，自然，牢固，温暖，感动，细水长流，历久弥新。
+
+{% endtimenode %}
 {% timenode 4月16日 %}
 
-- 准备学习。
+- 学习。
 
 {% endtimenode %}
 {% timenode 4月16日 %}
