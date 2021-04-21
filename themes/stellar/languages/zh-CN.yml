@@ -36,7 +36,7 @@ meta:
 footer:
   license: '鲁ICP备18011116号'
   info_not_open_source: '本站由 %s 创建,您可以在 %s 找到本站源码。'
-  info_open_source: '本站由 %s 创建,您可以在 %s 找到本站源码。'
+  info_open_source: ' 鲁ICP备18011116号-本站由 %s 创建-您可以在 %s 找到本站源码'
 
 page:
   error:
