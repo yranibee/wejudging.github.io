@@ -15,7 +15,7 @@ header: false
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
-**如果宇宙中真有什么终极的逻辑，那就是我们终有一天会在舰桥上重逢，直到生命终结。**
+**因为遇到了温柔可爱的人，所以觉得世界可爱温柔。**
 
 {% navbar [文章](/) [项目](/wiki/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
 
