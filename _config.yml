@@ -120,8 +120,4 @@ inject:
     - <meta name="theme-color" content="#ffffff">
 
 
-lazyload:
-  enable: true
-  onlypost: true
-  loadingImg: /images/loading.svg
 
