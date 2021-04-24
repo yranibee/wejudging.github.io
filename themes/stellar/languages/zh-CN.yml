@@ -36,7 +36,7 @@ meta:
 footer:
   license: ''
   info_not_open_source: '本站由 %s 创建,您可以在 %s 找到本站源码。'
-  info_open_source: '[鲁ICP备18011116号-2](https://beian.miit.gov.cn/) 本站源码在 %s 由 %s 创建'
+  info_open_source: '[weijiajin © 2021](https://weijiajin.com/about) [鲁ICP备18011116号-2](https://beian.miit.gov.cn/) 本站源码在 %s 由 %s 创建'
 
 page:
   error:
