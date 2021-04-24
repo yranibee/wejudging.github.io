@@ -3132,3 +3132,10 @@ div.swiper-slide img {
 .cmt-body.utterances {
   margin: 0 -4px;
 }
+a {
+  text-decoration: none;
+  color: #2196f3;
+}
+a:hover {
+  color: #ff5722;
+}
