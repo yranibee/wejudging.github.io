@@ -905,7 +905,8 @@ div.toast {
 }
 .page-footer a {
   color: var(--text-p3);
-  text-decoration: underline;
+  text-decoration: none;
+  color: #2196f3;
 }
 .page-footer a:hover {
   color: #ff5722;
@@ -3131,11 +3132,4 @@ div.swiper-slide img {
 }
 .cmt-body.utterances {
   margin: 0 -4px;
-}
-a {
-  text-decoration: none;
-  color: #2196f3;
-}
-a:hover {
-  color: #ff5722;
 }
