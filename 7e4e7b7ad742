@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 5.4.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>基于深度学习框架Tensorflow的成绩自动查询 - weijiajin</title>
+
+  
+  <meta name="description" content="程序自动化操作，简化成绩查询过程，节省时间，提高效率。">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    
+      <link rel="manifest" href="/images/favicon/site.webmanifest">
+    
+      <link rel="mask-icon" href="/images/logo.svg" color="#5bbad5">
+    
+      <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    
+      <meta name="msapplication-TileColor" content="#2d89ef">
+    
+      <meta name="msapplication-config" content="#2d89ef">
+    
+      <meta name="theme-color" content="#ffffff">
+    
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left'>
+    
+
+<header class='header'>
+  <div class='logo-wrap'>
+  
+    <a class='avatar' href='/about/'><img no-lazy src='/images/logo.svg'/></a>
+  
+  
+    <a class='title' href='/about/'><img no-lazy height="32px" src="/images/weijiajin.png"/ onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a>
+  
+</div>
+
+  <nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/bookmark/">书签</a><a class="nav-item" href="/about/">更多</a></nav>
+</header>
+
+<div class='widgets'>
+  
+    
+      
+      
+
+  <div class='widget-wrap' id='toc'>
+    <div class='widget-header h4 dis-select'>
+      <span class='name'>
+        
+          本文目录
+        
+      </span>
+    </div>
+    <div class='widget-body fs14 post'>
+      
+        <div class='doc-tree active'>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%8B%E7%BB%8D"><span class="toc-text">项目介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%89%80%E9%9C%80%E7%9F%A5%E8%AF%86"><span class="toc-text">项目所需知识</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BC%98%E7%82%B9"><span class="toc-text">项目优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%89%80%E9%9C%80%E5%BA%93"><span class="toc-text">项目所需库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E9%9A%BE%E7%82%B9"><span class="toc-text">项目难点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-text">多用户使用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">运行结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python%E6%BA%90%E7%A0%81"><span class="toc-text">python源码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TODO%EF%BC%9A"><span class="toc-text">TODO：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+        </div>
+      
+    </div>
+  </div>
+
+
+    
+  
+</div>
+<footer class="footer"><div class="social-wrap dis-select"><a class="social" href="mailto:wejudging@gmail.com" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/gmail.svg"/></a><a class="social" href="https://github.com/wejudging" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/08a41b181ce68.svg"/></a><a class="social" href="https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/cf1ae151f9e83.svg"/></a><a class="social" href="https://volantis.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/volantis.svg"/></a><a class="social" href="https://resume.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/resume.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+  <div class='bread-nav fs12'>
+  
+    
+    <div id='breadcrumb'>
+      <a class='cap breadcrumb' href='/'>主页</a>
+      <span class="sep"></span>
+      <a class='cap breadcrumb' href='/'>文章</a>
+      
+        <span class="sep"></span>
+        <a class="cap breadcrumb-link" href="/categories/python/">python</a>
+      
+    </div>
+    <div id='post-meta'>
+      发布于&nbsp;<time datetime='2020-11-24T11:02:37.000Z'>2020-11-24</time>
+    </div>
+  
+  </div>
+
+
+<article class='content md post'>
+<h1 class="article-title"><span>基于深度学习框架Tensorflow的成绩自动查询</span></h1>
+<blockquote>
+<p>项目地址(包含数据集)：<a target="_blank" rel="noopener" href="https://github.com/feelheart7/Python">https://github.com/feelheart7/Python</a><br>项目地址(包含数据集，精简版，由于学校网页失效，精简只有深度学习核心部分)：<a target="_blank" rel="noopener" href="https://github.com/feelheart7/tensorflow">https://github.com/feelheart7/tensorflow</a></p>
+</blockquote>
+<h4 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h4><p>当考试结束后，有很多同学想及时知道自己的成绩，由于学校成绩在官网最新更新，其他平台查成绩有很大的延迟，所以迫不及待的同学需要去学校官网的教务处查询，过程操作不是很方便，每次凭运气查成绩。于是通过程序自动化操作，简化成绩查询过程，节省时间，提高效率。</p>
+<h5 id="项目所需知识"><a href="#项目所需知识" class="headerlink" title="项目所需知识"></a>项目所需知识</h5><ul>
+<li>图像数值处理</li>
+<li>深度学习</li>
+<li>tensorflow</li>
+<li>python3.6</li>
+<li>爬虫</li>
+</ul>
+<h4 id="项目优点"><a href="#项目优点" class="headerlink" title="项目优点"></a>项目优点</h4><ul>
+<li>第一次查询全部成绩</li>
+<li>最新成绩通过邮箱通知，最新成绩显示在邮箱标题</li>
+<li>配置简单只需填写 ，学号、密码、和接受通知的邮箱</li>
+</ul>
+<h4 id="项目所需库"><a href="#项目所需库" class="headerlink" title="项目所需库"></a>项目所需库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 操作图片模块</span><br><span class="line">from PIL import Image</span><br><span class="line"># 第三方OCR调用（识别率不高）</span><br><span class="line">import pytesseract</span><br><span class="line"># 范围随机模块</span><br><span class="line">import random</span><br><span class="line"># 操作系统模块</span><br><span class="line">import os</span><br><span class="line"># 矩阵计算与tensorflow（深度学习框架）</span><br><span class="line">import numpy as np</span><br><span class="line">import tensorflow as tf</span><br><span class="line"># 爬虫模拟网页请求模块</span><br><span class="line">import requests</span><br><span class="line"># 调用系统浏览器</span><br><span class="line">import webbrowser</span><br><span class="line"># 爬取html指定内容</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"># 正则模块</span><br><span class="line">import re</span><br><span class="line"># smtp邮箱</span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">from email.utils import formataddr</span><br><span class="line"># 时间模块，用于延迟</span><br><span class="line">import time</span><br><span class="line"># 下载图片模块</span><br><span class="line">from typing import Any</span><br><span class="line">from urllib.request import urlretrieve</span><br><span class="line"># TF_CPP_MIN_LOG_LEVEL默认值为 0 (显示所有logs)</span><br><span class="line"># 设置为 1 隐藏 INFO logs, 2 额外隐藏WARNING logs</span><br><span class="line"># 设置为3所有 ERROR logs也不显示</span><br><span class="line">os.environ[&#39;TF_CPP_MIN_LOG_LEVEL&#39;] &#x3D; &#39;2&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="项目难点"><a href="#项目难点" class="headerlink" title="项目难点"></a>项目难点</h4><p>通过深度神经网络的验证码识别，目前我的验证码的识别率为97%，3万图片经过深度神经网络的训练，使用的是Google的神经网络框架tensorflow，如果还想提高识别率也是可以的，可以增加数据集，降低keep_prob的值（拟合度），达到99.9%是没有问题的。</p>
+<blockquote>
+<p>3万张的数据集并不是我手动码的，而是通过最开始我自己人工识别了1000张和我的好朋友刘雪峰200张作为最初数据集，开始训练的识别率只有20%左右，然后写了个函数将识别正确验证码储存，再进行训练，从而增大数据集和提高数据集（当识别率已经很高的时候，错误的图片再进行人工识别在训练可进一步提高识别率）。</p>
+</blockquote>
+<h4 id="多用户使用方法"><a href="#多用户使用方法" class="headerlink" title="多用户使用方法"></a>多用户使用方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">info &#x3D; [&#123;</span><br><span class="line">        &#39;account&#39;: &#39;******,</span><br><span class="line">        &#39;password&#39;: &#39;******&#39;,</span><br><span class="line">        &#39;email&#39;: &#39;*****@qq.com&#39;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        &#39;account&#39;: &#39;******</span><br><span class="line">        &#39;password&#39;: &#39;***&#39;,</span><br><span class="line">        &#39;email&#39;: &#39;*****@qq.com&#39;</span><br><span class="line">        &#125;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s2.ax1x.com/2020/01/31/18SxbR.png" alt="运行结果"></p>
+<h4 id="python源码"><a href="#python源码" class="headerlink" title="python源码"></a>python源码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br></pre></td><td class="code"><pre><span class="line"># coding&#x3D;utf-8</span><br><span class="line"># 操作图片模块</span><br><span class="line">from PIL import Image</span><br><span class="line"># 第三方OCR调用（识别率不高）</span><br><span class="line">import pytesseract</span><br><span class="line"># 范围随机模块</span><br><span class="line">import random</span><br><span class="line"># 操作系统模块</span><br><span class="line">import os</span><br><span class="line"># 矩阵计算与tensorflow（深度学习框架）</span><br><span class="line">import numpy as np</span><br><span class="line">import tensorflow as tf</span><br><span class="line"># 爬虫模拟网页请求模块</span><br><span class="line">import requests</span><br><span class="line"># 调用系统浏览器</span><br><span class="line">import webbrowser</span><br><span class="line"># 爬取html指定内容</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"># 正则模块</span><br><span class="line">import re</span><br><span class="line"># smtp邮箱</span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">from email.utils import formataddr</span><br><span class="line"># 时间模块，用于延迟</span><br><span class="line">import time</span><br><span class="line"># 下载图片模块</span><br><span class="line">from typing import Any</span><br><span class="line">from urllib.request import urlretrieve</span><br><span class="line"># TF_CPP_MIN_LOG_LEVEL默认值为 0 (显示所有logs)</span><br><span class="line"># 设置为 1 隐藏 INFO logs, 2 额外隐藏WARNING logs</span><br><span class="line"># 设置为3所有 ERROR logs也不显示</span><br><span class="line">os.environ[&#39;TF_CPP_MIN_LOG_LEVEL&#39;] &#x3D; &#39;2&#39;</span><br><span class="line"></span><br><span class="line"># 全局变量</span><br><span class="line">IMAGE_HEIGHT &#x3D; 22  # 验证码图片高度</span><br><span class="line">IMAGE_WIDTH &#x3D; 68   # 验证码图片宽度</span><br><span class="line">MAX_CAPTCHA &#x3D; 4    # 验证码的位数</span><br><span class="line">CHAR_SET_LEN &#x3D; 36  # 验证码的字符有多少种</span><br><span class="line"># 验证码图片网址</span><br><span class="line">IMAGE_URL &#x3D; &quot;http:&#x2F;&#x2F;jwfw1.sdjzu.edu.cn&#x2F;ssfw&#x2F;jwcaptcha.do&quot;</span><br><span class="line"># 下载验证码图片的数量</span><br><span class="line">VERIFICATION_CODE_NUMBER &#x3D; 10</span><br><span class="line"># 验证码文件夹与文件绝对存储路径</span><br><span class="line">VERIFICATION_CODE_PATH1 &#x3D; os.path.dirname(__file__) + &#39;&#x2F;verification_code_images&#x2F;&#39;</span><br><span class="line">VERIFICATION_CODE_PATH2 &#x3D; os.path.dirname(__file__) + &#39;&#x2F;verification_code_images&#x2F;&#123;name&#125;.png&#39;</span><br><span class="line"># 训练数据集绝对存储路径</span><br><span class="line">VERIFICATION_CODE_TRAINING_PATH &#x3D; os.path.dirname(__file__) + &#39;&#x2F;verification_code_training_images&#x2F;&#39;</span><br><span class="line"># placeholder 是 Tensorflow 中的占位符，暂时储存变量 X Y ,keep_prob是dropout层保留概率</span><br><span class="line">X &#x3D; tf.placeholder(tf.float32, [None, IMAGE_HEIGHT*IMAGE_WIDTH])</span><br><span class="line">Y &#x3D; tf.placeholder(tf.float32, [None, MAX_CAPTCHA*CHAR_SET_LEN])</span><br><span class="line">keep_prob &#x3D; tf.placeholder(tf.float32)</span><br><span class="line"># 邮箱信息</span><br><span class="line">SENDER &#x3D; &#39;********&#39;</span><br><span class="line">PASSWORD &#x3D; &#39;********&#39;</span><br><span class="line"># 用户信息</span><br><span class="line">info &#x3D; [&#123;</span><br><span class="line">        &#39;account&#39;: &#39;********&#39;,</span><br><span class="line">        &#39;password&#39;: &#39;********&#39;,</span><br><span class="line">        &#39;email&#39;: &#39;********&#39;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        &#39;account&#39;: &#39;********&#39;,</span><br><span class="line">        &#39;password&#39;: &#39;********&#39;,</span><br><span class="line">        &#39;email&#39;: &#39;********&#39;</span><br><span class="line">        &#125;]</span><br><span class="line"># String1为原始成绩,String2为最新成绩。创建方式为这样append防止默认copy（以免浅拷贝）</span><br><span class="line">String1 &#x3D; [[] for copy in range(len(info))]</span><br><span class="line">String2 &#x3D; [[] for copy in range(len(info))]</span><br><span class="line"># 训练集所有图片list与</span><br><span class="line">all_images &#x3D; os.listdir(VERIFICATION_CODE_TRAINING_PATH)</span><br><span class="line">all_images_size &#x3D; len(all_images)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 下载验证码图片安装序号存储图片</span><br><span class="line">def download_verification_code():</span><br><span class="line">    # 创建文件夹如果没有</span><br><span class="line">    os.makedirs(VERIFICATION_CODE_PATH1, exist_ok&#x3D;True)</span><br><span class="line">    for i in range(0, VERIFICATION_CODE_NUMBER):</span><br><span class="line">        urlretrieve(IMAGE_URL, VERIFICATION_CODE_PATH2.format(name&#x3D;i))</span><br><span class="line">    print(&quot;成功下载%s张图片！&quot; % VERIFICATION_CODE_NUMBER)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 调用pytesseract整体识别验证码(识别率低)</span><br><span class="line">def pytesseract_verification_code():</span><br><span class="line">    for i in range(0, VERIFICATION_CODE_NUMBER):</span><br><span class="line">        img &#x3D; Image.open(VERIFICATION_CODE_PATH2.format(name&#x3D;i))</span><br><span class="line">        char &#x3D; pytesseract.image_to_string(img, config&#x3D;&#39;--psm 8&#39;)</span><br><span class="line">        # psm 各个值的说明</span><br><span class="line">        # 0：定向脚本监测（OSD）</span><br><span class="line">        # 1： 使用OSD自动分页</span><br><span class="line">        # 2 ：自动分页，但是不使用OSD或OCR（Optical Character Recognition，光学字符识别）</span><br><span class="line">        # 3 ：全自动分页，但是没有使用OSD（默认）</span><br><span class="line">        # 4 ：假设可变大小的一个文本列。</span><br><span class="line">        # 5 ：假设垂直对齐文本的单个统一块。</span><br><span class="line">        # 6 ：假设一个统一的文本块。</span><br><span class="line">        # 7 ：将图像视为单个文本行。</span><br><span class="line">        # 8 ：将图像视为单个词。</span><br><span class="line">        # 9 ：将图像视为圆中的单个词。</span><br><span class="line">        # 10 ：将图像视为单个字符</span><br><span class="line">        print(i, char)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 二值化分割验证码再调用pytesseract识别验证码(识别率有所提高)</span><br><span class="line">def pytesseract_devide_verification_code():</span><br><span class="line">    # 随机读取图片并灰度化</span><br><span class="line">    random_number &#x3D; random.randint(0, VERIFICATION_CODE_NUMBER)</span><br><span class="line">    img &#x3D; Image.open(VERIFICATION_CODE_PATH2.format(name&#x3D;random_number)).convert(&#39;L&#39;)</span><br><span class="line">    # 二值化:173为我的验证图片有较好的效果的值，不同图片的值不一样，请根据自己验证码图片设置相应的值</span><br><span class="line">    img &#x3D; img.point(lambda x: 255 if x &gt; 173 else 0)</span><br><span class="line">    # 分离:crop函数带的参数为(起始点的横坐标，起始点的纵坐标，宽度，高度）</span><br><span class="line">    img1 &#x3D; img.crop((0 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, 0, 1 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    img2 &#x3D; img.crop((1 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, 0, 2 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    img3 &#x3D; img.crop((2 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, 0, 3 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    img4 &#x3D; img.crop((3 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, 0, 4 * IMAGE_WIDTH &#x2F; MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    # 调用pytesseract识别验证码</span><br><span class="line">    char &#x3D; pytesseract.image_to_string(img, config&#x3D;&#39;--psm 8&#39;)</span><br><span class="line">    char1 &#x3D; pytesseract.image_to_string(img1, config&#x3D;&#39;--psm 10&#39;)</span><br><span class="line">    char2 &#x3D; pytesseract.image_to_string(img2, config&#x3D;&#39;--psm 10&#39;)</span><br><span class="line">    char3 &#x3D; pytesseract.image_to_string(img3, config&#x3D;&#39;--psm 10&#39;)</span><br><span class="line">    char4 &#x3D; pytesseract.image_to_string(img4, config&#x3D;&#39;--psm 10&#39;)</span><br><span class="line">    print(char)</span><br><span class="line">    print(char1)</span><br><span class="line">    print(char2)</span><br><span class="line">    print(char3)</span><br><span class="line">    print(char4)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">################################################################</span><br><span class="line">### 通过tensorflow的CNN(卷积神经网络深度学习后识别验证码,识别率贼高####</span><br><span class="line">################################################################</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 获取验证码名字和图片（训练数据集）</span><br><span class="line">def get_name_and_image():</span><br><span class="line">    # 获取数据集下的所有图片的数组all_images</span><br><span class="line">    # all_images &#x3D; os.listdir(VERIFICATION_CODE_TRAINING_PATH)</span><br><span class="line">    random_image &#x3D; random.randint(0, all_images_size - 1)</span><br><span class="line">    # print (all_images_size)</span><br><span class="line">    base &#x3D; os.path.basename(VERIFICATION_CODE_TRAINING_PATH + all_images[random_image])  # 有扩展名</span><br><span class="line">    name &#x3D; os.path.splitext(base)[0]  # 无扩展名</span><br><span class="line">    image &#x3D; Image.open(VERIFICATION_CODE_TRAINING_PATH + all_images[random_image])</span><br><span class="line">    image &#x3D; np.array(image)</span><br><span class="line">    return name, image</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 验证码名字转变成向量: 不同位数的需要重写这个函数,函数里的数字为ASCII码</span><br><span class="line">def name2vec(name):</span><br><span class="line">    vector &#x3D; np.zeros(MAX_CAPTCHA*CHAR_SET_LEN)</span><br><span class="line">    for i, c in enumerate(name):</span><br><span class="line">        if ord(c) &lt; 58:</span><br><span class="line">            idx &#x3D; i * 36 + ord(c)-48</span><br><span class="line">            vector[idx] &#x3D; 1</span><br><span class="line">        else:</span><br><span class="line">            idx &#x3D; i * 36 + ord(c) - 87</span><br><span class="line">            vector[idx] &#x3D; 1</span><br><span class="line">    return vector</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 向量转名字:注释部分是 最开始的向量 转 名字</span><br><span class="line"># def vec2name(vec):</span><br><span class="line">#     name &#x3D; []</span><br><span class="line">#     for i, c in enumerate(vec):</span><br><span class="line">#         if c &#x3D;&#x3D; 1.0:</span><br><span class="line">#             name.append(i)</span><br><span class="line">#     for i in range(0, 4):</span><br><span class="line">#         if name[i] % 36 &lt; 10:</span><br><span class="line">#             name[i] &#x3D; chr(name[i] % 36 + 48)</span><br><span class="line">#         else:</span><br><span class="line">#             name[i] &#x3D; chr(name[i] % 36 + 87)</span><br><span class="line">#     return &quot;&quot;.join(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 向量转名字: 训练是不用到这个函数，训练完成用这个函数得到最终结果</span><br><span class="line">def vec2name(vec):</span><br><span class="line">    name &#x3D; []</span><br><span class="line">    for i in vec:</span><br><span class="line">        if i &lt; 10:</span><br><span class="line">            a &#x3D; chr(i + 48)</span><br><span class="line">            name.append(a)</span><br><span class="line">        else:</span><br><span class="line">            a &#x3D; chr(i + 87)</span><br><span class="line">            name.append(a)</span><br><span class="line">    return &quot;&quot;.join(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 采样函数:默认一次采集64张验证码作为一次训练</span><br><span class="line"># 需要注意通过get_name_and_image()函数获得的image是一个含布尔值的矩阵</span><br><span class="line"># 在这里通过1*(image.flatten())函数转变成只含0和1的1行114*450列的矩阵</span><br><span class="line">def get_next_batch(batch_size&#x3D;64):</span><br><span class="line">    batch_x &#x3D; np.zeros([batch_size, IMAGE_HEIGHT*IMAGE_WIDTH])</span><br><span class="line">    batch_y &#x3D; np.zeros([batch_size, MAX_CAPTCHA*CHAR_SET_LEN])</span><br><span class="line"></span><br><span class="line">    for i in range(batch_size):</span><br><span class="line">        name, image &#x3D; get_name_and_image()</span><br><span class="line">        batch_x[i, :] &#x3D; 1*(image.flatten())</span><br><span class="line">        batch_y[i, :] &#x3D; name2vec(name)</span><br><span class="line">    return batch_x, batch_y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 定义CNN(卷积神经网络):三个卷积层卷积神经网络结构</span><br><span class="line"># 采用3个卷积层加1个全连接层的结构，在每个卷积层中都选用2*2的最大池化层和dropout层，卷积核尺寸选择5*5。，</span><br><span class="line"># 我们的图片已经经过了3层池化层，也就是长宽都压缩了8倍(各自取整为3X9)</span><br><span class="line">def crack_captcha_cnn(w_alpha&#x3D;0.01, b_alpha&#x3D;0.1):</span><br><span class="line">    x &#x3D; tf.reshape(X, shape&#x3D;[-1, IMAGE_HEIGHT, IMAGE_WIDTH, 1])</span><br><span class="line">    # 3个卷积层</span><br><span class="line">    w_c1 &#x3D; tf.Variable(w_alpha * tf.random_normal([5, 5, 1, 32]))</span><br><span class="line">    b_c1 &#x3D; tf.Variable(b_alpha * tf.random_normal([32]))</span><br><span class="line">    conv1 &#x3D; tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(x, w_c1, strides&#x3D;[1, 1, 1, 1], padding&#x3D;&#39;SAME&#39;), b_c1))</span><br><span class="line">    conv1 &#x3D; tf.nn.max_pool(conv1, ksize&#x3D;[1, 2, 2, 1], strides&#x3D;[1, 2, 2, 1], padding&#x3D;&#39;SAME&#39;)</span><br><span class="line">    conv1 &#x3D; tf.nn.dropout(conv1, keep_prob)</span><br><span class="line"></span><br><span class="line">    w_c2 &#x3D; tf.Variable(w_alpha * tf.random_normal([5, 5, 32, 64]))</span><br><span class="line">    b_c2 &#x3D; tf.Variable(b_alpha * tf.random_normal([64]))</span><br><span class="line">    conv2 &#x3D; tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(conv1, w_c2, strides&#x3D;[1, 1, 1, 1], padding&#x3D;&#39;SAME&#39;), b_c2))</span><br><span class="line">    conv2 &#x3D; tf.nn.max_pool(conv2, ksize&#x3D;[1, 2, 2, 1], strides&#x3D;[1, 2, 2, 1], padding&#x3D;&#39;SAME&#39;)</span><br><span class="line">    conv2 &#x3D; tf.nn.dropout(conv2, keep_prob)</span><br><span class="line"></span><br><span class="line">    w_c3 &#x3D; tf.Variable(w_alpha * tf.random_normal([5, 5, 64, 64]))</span><br><span class="line">    b_c3 &#x3D; tf.Variable(b_alpha * tf.random_normal([64]))</span><br><span class="line">    conv3 &#x3D; tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(conv2, w_c3, strides&#x3D;[1, 1, 1, 1], padding&#x3D;&#39;SAME&#39;), b_c3))</span><br><span class="line">    conv3 &#x3D; tf.nn.max_pool(conv3, ksize&#x3D;[1, 2, 2, 1], strides&#x3D;[1, 2, 2, 1], padding&#x3D;&#39;SAME&#39;)</span><br><span class="line">    conv3 &#x3D; tf.nn.dropout(conv3, keep_prob)</span><br><span class="line"></span><br><span class="line">    # 1个全连接层</span><br><span class="line">    w_d &#x3D; tf.Variable(w_alpha * tf.random_normal([3*9*64, 1024]))</span><br><span class="line">    b_d &#x3D; tf.Variable(b_alpha * tf.random_normal([1024]))</span><br><span class="line">    dense &#x3D; tf.reshape(conv3, [-1, w_d.get_shape().as_list()[0]])</span><br><span class="line">    dense &#x3D; tf.nn.relu(tf.add(tf.matmul(dense, w_d), b_d))</span><br><span class="line">    dense &#x3D; tf.nn.dropout(dense, keep_prob)</span><br><span class="line"></span><br><span class="line">    w_out &#x3D; tf.Variable(w_alpha * tf.random_normal([1024, MAX_CAPTCHA * CHAR_SET_LEN]))</span><br><span class="line">    b_out &#x3D; tf.Variable(b_alpha * tf.random_normal([MAX_CAPTCHA * CHAR_SET_LEN]))</span><br><span class="line">    out &#x3D; tf.add(tf.matmul(dense, w_out), b_out)</span><br><span class="line">    return out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 训练函数：选择sigmoid_cross_entropy_with_logits()交叉熵来比较loss</span><br><span class="line"># 用adam优化器来优化</span><br><span class="line"># keep_prob &#x3D; 0.3，控制着过拟合</span><br><span class="line">def train_crack_captcha_cnn():</span><br><span class="line">    output &#x3D; crack_captcha_cnn()</span><br><span class="line">    loss &#x3D; tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits&#x3D;output, labels&#x3D;Y))</span><br><span class="line">    optimizer &#x3D; tf.train.AdamOptimizer(learning_rate&#x3D;0.0001).minimize(loss)</span><br><span class="line">    predict &#x3D; tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN])</span><br><span class="line">    max_idx_p &#x3D; tf.argmax(predict, 2)</span><br><span class="line">    max_idx_l &#x3D; tf.argmax(tf.reshape(Y, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">    correct_pred &#x3D; tf.equal(max_idx_p, max_idx_l)</span><br><span class="line">    accuracy &#x3D; tf.reduce_mean(tf.cast(correct_pred, tf.float32))</span><br><span class="line">    saver &#x3D; tf.train.Saver()</span><br><span class="line">    with tf.Session() as sess:</span><br><span class="line">        sess.run(tf.global_variables_initializer())</span><br><span class="line">        step &#x3D; 0</span><br><span class="line">        while True:</span><br><span class="line">            batch_x, batch_y &#x3D; get_next_batch(256)</span><br><span class="line">            _, loss_ &#x3D; sess.run([optimizer, loss], feed_dict&#x3D;&#123;X: batch_x, Y: batch_y, keep_prob: 0.2&#125;)</span><br><span class="line">            print(step, loss_)</span><br><span class="line">            # 每100 step计算一次准确率</span><br><span class="line">            if step % 1000 &#x3D;&#x3D; 0:</span><br><span class="line">                batch_x_test, batch_y_test &#x3D; get_next_batch(1000)</span><br><span class="line">                acc &#x3D; sess.run(accuracy, feed_dict&#x3D;&#123;X: batch_x_test, Y: batch_y_test, keep_prob: 1.&#125;)</span><br><span class="line">                print(step, acc)</span><br><span class="line">                # 如果准确率大于99%,保存模型,完成训练</span><br><span class="line">                if acc &gt; 0.999:</span><br><span class="line">                    saver.save(sess, &quot;.&#x2F;crack_capcha.model&quot;, global_step&#x3D;step)</span><br><span class="line">                    break</span><br><span class="line">            step +&#x3D; 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># train_crack_captcha_cnn()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 训练完成后,注释train_crack_captcha_cnn()，取消下面的注释，开始预测，注意更改预测集目录</span><br><span class="line"># def crack_captcha():</span><br><span class="line">#     output &#x3D; crack_captcha_cnn()</span><br><span class="line">#</span><br><span class="line">#     saver &#x3D; tf.train.Saver()</span><br><span class="line">#     with tf.Session() as sess:</span><br><span class="line">#         saver.restore(sess, tf.train.latest_checkpoint(&#39;.&#39;))</span><br><span class="line">#         n &#x3D; 1</span><br><span class="line">#         while n &lt;&#x3D; 10:</span><br><span class="line">#             text, verification_code_training_images &#x3D; get_name_and_image()</span><br><span class="line">#             verification_code_training_images &#x3D; 1 * (verification_code_training_images.flatten())</span><br><span class="line">#             predict &#x3D; tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">#             text_list &#x3D; sess.run(predict, feed_dict&#x3D;&#123;X: [verification_code_training_images], keep_prob: 1&#125;)</span><br><span class="line">#             vec &#x3D; text_list[0].tolist()</span><br><span class="line">#             predict_text &#x3D; vec2name(vec)</span><br><span class="line">#             print(&quot;正确: &#123;&#125;  预测: &#123;&#125;&quot;.format(text, predict_text))</span><br><span class="line">#             n +&#x3D; 1</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># crack_captcha()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def captcha():</span><br><span class="line">    output &#x3D; crack_captcha_cnn()</span><br><span class="line">    saver &#x3D; tf.train.Saver()</span><br><span class="line">    with tf.Session() as sess:</span><br><span class="line">        saver.restore(sess, tf.train.latest_checkpoint(&#39;.&#39;))</span><br><span class="line">        first_time &#x3D; True</span><br><span class="line"></span><br><span class="line">        while True:</span><br><span class="line">            users_number &#x3D; 0</span><br><span class="line">            for information in info:</span><br><span class="line">                while True:</span><br><span class="line">                    session &#x3D; requests.Session()</span><br><span class="line">                    headers &#x3D; &#123;&quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko&#x2F;20100101 Firefox&#x2F;39.0&quot;&#125;</span><br><span class="line">                    html &#x3D; session.get(IMAGE_URL, headers&#x3D;headers).content</span><br><span class="line">                    with open(&#39;.&#x2F;test_captcha&#x2F;test.png&#39;, &#39;wb&#39;) as file:</span><br><span class="line">                        file.write(html)</span><br><span class="line">                    img &#x3D; Image.open(&#39;.&#x2F;test_captcha&#x2F;test.png&#39;).convert(&#39;L&#39;)</span><br><span class="line">                    # 二值化</span><br><span class="line">                    img &#x3D; img.point(lambda x: 255 if x &gt; 173 else 0)</span><br><span class="line">                    img &#x3D; np.array(img)</span><br><span class="line">                    img &#x3D; 1 * (img.flatten())</span><br><span class="line">                    predict &#x3D; tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">                    text_list &#x3D; sess.run(predict, feed_dict&#x3D;&#123;X: [img], keep_prob: 1&#125;)</span><br><span class="line">                    vec &#x3D; text_list[0].tolist()</span><br><span class="line">                    # print(&quot;预测:&quot;, vec2name(vec))</span><br><span class="line"></span><br><span class="line">                    session.get(&#39;http:&#x2F;&#x2F;jwfw1.sdjzu.edu.cn&#x2F;ssfw&#x2F;login.jsp&#39;)</span><br><span class="line">                    data &#x3D; &#123;&#39;j_username&#39;: information[&#39;account&#39;], &#39;j_password&#39;: information[&#39;password&#39;],</span><br><span class="line">                            &#39;validateCode&#39;: vec2name(vec)&#125;</span><br><span class="line">                    r &#x3D; session.post(&#39;http:&#x2F;&#x2F;jwfw1.sdjzu.edu.cn&#x2F;ssfw&#x2F;j_spring_ids_security_check&#39;, data&#x3D;data, headers&#x3D;headers)</span><br><span class="line">                    if (re.search(r&#39;校验码错误&#39;, r.text, re.I | re.M)) is None:</span><br><span class="line">                        print(&quot;验证码正确通过！&quot;)</span><br><span class="line">                        n &#x3D; session.get(</span><br><span class="line">                            &#39;http:&#x2F;&#x2F;jwfw1.sdjzu.edu.cn&#x2F;ssfw&#x2F;jwnavmenu.do?menuItemWid&#x3D;1E057E24ABAB4CAFE0540010E0235690&#39;,</span><br><span class="line">                            headers&#x3D;headers)</span><br><span class="line">                        soup &#x3D; BeautifulSoup(n.content, features&#x3D;&#39;html.parser&#39;)</span><br><span class="line">                        s &#x3D; soup.select(&#39;div[title&#x3D;&quot;有效成绩&quot;] .t_con td[align&#x3D;&quot;center&quot;]&#39;)</span><br><span class="line">                        subjects_number &#x3D; int(len(s) &#x2F; 11)</span><br><span class="line">                        # print(&quot;科目数:&quot;, subjects_number)</span><br><span class="line">                        for i in range(0, subjects_number):</span><br><span class="line">                            # print(&#39;序号:&#39;, s[i * 11].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;学年学期:&#39;, s[i * 11 + 1].get_text( strip&#x3D;True))</span><br><span class="line">                            # print(&#39;课程号:&#39;, s[i * 11 + 2].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;课程名称:&#39;, s[i * 11 + 3].get_text( strip&#x3D;True))</span><br><span class="line">                            # print(&#39;课程类别:&#39;, s[i * 11 + 4].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;任选课类别:&#39;, s[i * 11 + 5].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;课程性质:&#39;, s[i * 11 + 6].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;学分:&#39;, s[i * 11 + 7].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;成绩:&#39;, s[i * 11 + 8].get_text(strip&#x3D;True))</span><br><span class="line">                            # print(&#39;****************&#39;)</span><br><span class="line">                            ss &#x3D; &#39;&#123;&#125; &#123;&#125; 成绩: &#123;&#125;&#39;.format(s[i * 11].get_text(strip&#x3D;True), s[i * 11 + 3].get_text(strip&#x3D;True),</span><br><span class="line">                                                       s[i * 11 + 8].get_text(strip&#x3D;True))</span><br><span class="line">                            if first_time:</span><br><span class="line">                                String1[users_number].append(ss)</span><br><span class="line">                            else:</span><br><span class="line">                                String2[users_number].append(ss)</span><br><span class="line">                        # 发送邮件</span><br><span class="line">                        my_user &#x3D; &#39;%s&#39; % information[&#39;email&#39;]</span><br><span class="line">                        sss &#x3D; &quot;&quot;.join(list(set(String2[users_number]).difference(set(String1[users_number]))))  # b中有而a中没有的</span><br><span class="line">                        ret &#x3D; True</span><br><span class="line">                        if first_time:</span><br><span class="line">                            text &#x3D; &#39;\n&#39;.join(String1[users_number])</span><br><span class="line"></span><br><span class="line">                            try:</span><br><span class="line">                                msg &#x3D; MIMEText(text, &#39;plain&#39;, &#39;utf-8&#39;)</span><br><span class="line">                                msg[&#39;From&#39;] &#x3D; formataddr([&quot;weijiajin&quot;, SENDER])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号</span><br><span class="line">                                msg[&#39;To&#39;] &#x3D; formataddr([&quot;亲～:&quot;, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号</span><br><span class="line">                                msg[&#39;Subject&#39;] &#x3D; &quot;全部成绩！好好学习！&quot;  # 邮件的主题，也可以说是标题</span><br><span class="line">                                server &#x3D; smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件人邮箱中的SMTP服务器，端口是465</span><br><span class="line">                                server.login(SENDER, PASSWORD)  # 括号中对应的是发件人邮箱账号、邮箱密码</span><br><span class="line">                                server.sendmail(SENDER, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span><br><span class="line">                                server.quit()  # 关闭连接</span><br><span class="line">                            except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret&#x3D;False</span><br><span class="line">                                ret &#x3D; False</span><br><span class="line">                            if ret:</span><br><span class="line">                                print(&quot;发送邮件成功！&quot;)</span><br><span class="line">                            else:</span><br><span class="line">                                print(&quot;发送邮件失败！&quot;)</span><br><span class="line">                            String2[users_number].clear()</span><br><span class="line">                            users_number &#x3D; + 1</span><br><span class="line">                            break</span><br><span class="line">                        elif sss &#x3D;&#x3D; &quot;&quot;:</span><br><span class="line">                            print(&quot;没有最新成绩！不发送邮件！&quot;)</span><br><span class="line">                            String2[users_number].clear()</span><br><span class="line">                            users_number &#x3D; + 1</span><br><span class="line">                            break</span><br><span class="line">                        elif sss !&#x3D; &quot;&quot;:</span><br><span class="line">                            text &#x3D; &#39;\n&#39;.join(String2[users_number])</span><br><span class="line">                            title &#x3D; &quot;&quot;.join(list(set(String2[users_number]).difference(set(String1[users_number]))))</span><br><span class="line">                            try:</span><br><span class="line">                                msg &#x3D; MIMEText(text, &#39;plain&#39;, &#39;utf-8&#39;)</span><br><span class="line">                                msg[&#39;From&#39;] &#x3D; formataddr([&quot;weijiajin&quot;, SENDER])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号</span><br><span class="line">                                msg[&#39;To&#39;] &#x3D; formataddr([&quot;亲～&quot;, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号</span><br><span class="line">                                msg[&#39;Subject&#39;] &#x3D; &quot;最新成绩出来啦～&quot; + title  # 邮件的主题，也可以说是标题</span><br><span class="line">                                server &#x3D; smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件人邮箱中的SMTP服务器，端口是465</span><br><span class="line">                                server.login(SENDER, my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码</span><br><span class="line">                                server.sendmail(SENDER, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span><br><span class="line">                                server.quit()  # 关闭连接</span><br><span class="line">                            except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret&#x3D;False</span><br><span class="line">                                ret &#x3D; False</span><br><span class="line">                            if ret:</span><br><span class="line">                                print(&quot;发送邮件成功！&quot;)</span><br><span class="line"></span><br><span class="line">                            else:</span><br><span class="line">                                print(&quot;发送邮件失败！&quot;)</span><br><span class="line">                            String1[users_number].clear()</span><br><span class="line">                            String1[users_number] &#x3D; String2[users_number]</span><br><span class="line">                            String2[users_number].clear()</span><br><span class="line">                            users_number &#x3D; + 1</span><br><span class="line">                            break</span><br><span class="line">                        time.sleep(300)</span><br><span class="line">                    else:</span><br><span class="line">                        print(&quot;校验码错误！重新尝试中......&quot;)</span><br><span class="line"></span><br><span class="line">            first_time &#x3D; False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def auto_download_train_images():</span><br><span class="line">    output &#x3D; crack_captcha_cnn()</span><br><span class="line">    saver &#x3D; tf.train.Saver()</span><br><span class="line">    with tf.Session() as sess:</span><br><span class="line">        saver.restore(sess, tf.train.latest_checkpoint(&#39;.&#39;))</span><br><span class="line">        times1 &#x3D; 0</span><br><span class="line">        times2 &#x3D; 0</span><br><span class="line"></span><br><span class="line">        while True:</span><br><span class="line">            session &#x3D; requests.Session()</span><br><span class="line">            headers &#x3D; &#123;&quot;User-Agent&quot;: &quot;Mozilla&#x2F;5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko&#x2F;20100101 Firefox&#x2F;39.0&quot;&#125;</span><br><span class="line">            html &#x3D; session.get(IMAGE_URL, headers&#x3D;headers).content</span><br><span class="line">            with open(&#39;.&#x2F;test_captcha&#x2F;test.png&#39;, &#39;wb&#39;) as file:</span><br><span class="line">                file.write(html)</span><br><span class="line">            img &#x3D; Image.open(&#39;.&#x2F;test_captcha&#x2F;test.png&#39;).convert(&#39;L&#39;)</span><br><span class="line">            # 二值化</span><br><span class="line">            img &#x3D; img.point(lambda x: 255 if x &gt; 173 else 0)</span><br><span class="line">            img1 &#x3D; np.array(img)</span><br><span class="line">            img1 &#x3D; 1 * (img1.flatten())</span><br><span class="line">            predict &#x3D; tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">            text_list &#x3D; sess.run(predict, feed_dict&#x3D;&#123;X: [img1], keep_prob: 1&#125;)</span><br><span class="line">            vec &#x3D; text_list[0].tolist()</span><br><span class="line">            # print(&quot;预测:&quot;, vec2name(vec))</span><br><span class="line">            session.get(&#39;http:&#x2F;&#x2F;jwfw1.sdjzu.edu.cn&#x2F;ssfw&#x2F;login.jsp&#39;)</span><br><span class="line">            data &#x3D; &#123;&#39;j_username&#39;: &#39;201611101122&#39;, &#39;j_password&#39;: &#39;174519&#39;,</span><br><span class="line">                    &#39;validateCode&#39;: vec2name(vec)&#125;</span><br><span class="line">            r &#x3D; session.post(&#39;http:&#x2F;&#x2F;jwfw1.sdjzu.edu.cn&#x2F;ssfw&#x2F;j_spring_ids_security_check&#39;, data&#x3D;data, headers&#x3D;headers)</span><br><span class="line">            if (re.search(r&#39;校验码错误&#39;, r.text, re.I | re.M)) is None:</span><br><span class="line">                # print(&quot;验证码正确通过！&quot;)</span><br><span class="line">                # print(times1)</span><br><span class="line">                image_name &#x3D; &#39;&#123;image_name&#125;.png&#39;</span><br><span class="line">                img.save(os.path.join(&#39;.&#x2F;verification_code_training_images&#x2F;&#39;, image_name.format(image_name&#x3D;vec2name(vec))))</span><br><span class="line">                times1 &#x3D; times1 + 1</span><br><span class="line">            else:</span><br><span class="line">                # print(&quot;校验码错误！&quot;)</span><br><span class="line">                # print(times2)</span><br><span class="line">                image_name &#x3D; &#39;&#123;image_name&#125;.png&#39;</span><br><span class="line">                img.save(os.path.join(&#39;.&#x2F;error_images&#x2F;&#39;, image_name.format(image_name&#x3D;vec2name(vec))))</span><br><span class="line">                times2 &#x3D; times2 + 1</span><br><span class="line">            rate &#x3D; times1&#x2F;(times2+times1)</span><br><span class="line">            print(&quot;总次数: % s&quot; % (times2+times1)+&quot;正确率：% s &quot; % rate)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">captcha()</span><br><span class="line"># auto_download_train_images()</span><br></pre></td></tr></table></figure>
+
+<h4 id="TODO："><a href="#TODO：" class="headerlink" title="TODO："></a>TODO：</h4><ul>
+<li>增加绩点计算公式</li>
+<li>集成于微信小程序或者微信公众号</li>
+<li>优化代码</li>
+</ul>
+<h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://morvanzhou.github.io/">https://morvanzhou.github.io/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.iswin.org/2016/10/15/Simple-CAPTCHA-Recognition-with-Machine-Learning/">https://www.iswin.org/2016/10/15/Simple-CAPTCHA-Recognition-with-Machine-Learning/</a></li>
+<li><a target="_blank" rel="noopener" href="https://finthon.com/python-tensorflow-cnn-captcha/">https://finthon.com/python-tensorflow-cnn-captcha/</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.topspeedsnail.com/archives/10858">http://blog.topspeedsnail.com/archives/10858</a></li>
+</ul>
+
+</article>
+
+<div class="related-wrap" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body"><div class="post-title fs14"><a href="/b222dc8aa245">上一篇：此刻的美好</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body utterances'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="utterances" repo="wejudging/weijiajin.com-comments" issue-term="pathname" theme="github-light"></div>
+
+    </div>
+  </div>
+
+
+
+      
+<footer class="page-footer fs12"><hr><div><p><a href="https://weijiajin.com/about">weijiajin © 2021</a>  |  <a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">鲁ICP备18011116号-2</a>  |  本站源码在 <a target="_blank" rel="noopener" href="https://github.com/wejudging/wejudging.github.io">GitHub</a> </p>
+</div></footer>
+
+
+      <div class='float-panel mobile-only' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" viewBox="0 0 1228 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2849"><path d="M0 0m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.3902l-973.901995 0q-97.390199 0-97.390199-97.3902l0 0q0-97.390199 97.390199-97.390199Z" p-id="2850"></path><path d="M0 389.560798m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.3902l-973.901995 0q-97.390199 0-97.390199-97.3902l0 0q0-97.390199 97.390199-97.390199Z" p-id="2851"></path><path d="M0 779.121596m97.390199 0l973.901995 0q97.390199 0 97.390199 97.390199l0 0q0 97.390199-97.390199 97.390199l-973.901995 0q-97.390199 0-97.390199-97.390199l0 0q0-97.390199 97.390199-97.390199Z" p-id="2852"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script')
+      script.src = src
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.0.1';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',
+    sitesjs: '/js/plugins/sites.js',
+    friendsjs: '/js/plugins/friends.js',
+  };
+
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper/swiper-bundle.min.css","js":"https://unpkg.com/swiper/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+</script>
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function utterances(){
+    if(!document.getElementById("utterances"))return;
+    setTimeout(function() {
+      var checkUtterances = setInterval(function () {
+        var el = document.getElementById("utterances");
+        if (!el) return
+        clearInterval(checkUtterances)
+        try {
+          el.innerHTML="";
+        } catch (error) {}
+        var script = document.createElement('script');
+        script.src = 'https://utteranc.es/client.js';
+        const keys = ['repo', 'issue-term', 'issue-number', 'theme', 'label', 'crossorigin'];
+        keys.forEach((key, i) => {
+          if (el.attributes[key] && el.attributes[key].value) {
+            script.setAttribute(key, el.attributes[key].value);
+          }
+        });
+        el.appendChild(script);
+       }, 200)
+    });
+  }
+  utterances();
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
