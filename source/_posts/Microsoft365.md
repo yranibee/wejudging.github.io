@@ -1,5 +1,5 @@
 ---
-title: Microsoft 365 E5 开发者（不包括 Windows 和音频会议）
+title: Microsoft 365 E5 开发者
 date: 2021-04-26 14:12:39
 tags: [onedrive,microsoft]
 categories: 羊毛
@@ -68,6 +68,8 @@ Set-SPOSite -Identity https://weijiajin-my.sharepoint.com/personal/admin_weijiaj
 ### 总结
 
 Microsoft 365 E5 开发者 主要可以白嫖Office与onedrive 5T大容量还可以存储一些大文件，下载也很方便，如果可以一直自动续费那是相当不错的，值得推荐使用。比国内的网盘好太多，速度也很不错！office也没有广告，一些想用正版Office也很推荐。
+
+
 
 
 
