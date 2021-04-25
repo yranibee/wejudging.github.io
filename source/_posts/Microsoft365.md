@@ -58,7 +58,7 @@ Set-SPOSite -Identity https://weijiajin-my.sharepoint.com/personal/admin_weijiaj
 
 - 最后等一天，成功的邮件就会发给你，然后这时候你就照着邮件给的方法自行升级到25T。
 
-## Microsoft 365 E5 开发者 自动订阅程序[已开源]
+## Microsoft 365 E5 开发者 开源自动订阅程序 
 
 教程地址：https://qyi.io/archives/687.html
 项目地址：https://github.com/luoye663/e5
