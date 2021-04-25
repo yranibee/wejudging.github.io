@@ -63,3 +63,14 @@ Set-SPOSite -Identity https://weijiajin-my.sharepoint.com/personal/admin_weijiaj
 教程地址：https://qyi.io/archives/687.html
 项目地址：https://github.com/luoye663/e5
 自动订阅程序： https://e5.qyi.io/
+
+
+### 总结
+
+Microsoft 365 E5 开发者 主要可以白嫖Office与onedrive 5T大容量还可以存储一些大文件，下载也很方便，如果可以一直自动续费那是相当不错的，值得推荐使用。比国内的网盘好太多，速度也很不错！office也没有广告，一些想用正版Office也很推荐。
+
+
+
+
+
+
