@@ -8,7 +8,7 @@ cover: /images/文章图片/Microsoft365.png
 
 
 
-## 立即加入 Microsoft 365 开发人员计划！
+### 立即加入 Microsoft 365 开发人员计划
 - 获取免费、可续订的 90 天 Microsoft 365 E5 开发人员订阅;
 - 包括SharePoint、OneDrive、Outlook、Exchange、Teams、Planner、Word、Excel、PowerPoint；
 - 订阅包含 25 个用于所有 Microsoft 365 应用的许可证
@@ -17,11 +17,11 @@ cover: /images/文章图片/Microsoft365.png
 申请链接：https://developer.microsoft.com/zh-cn/office/dev-program
 Microsoft 365 E5 开发者管理页： https://admin.microsoft.com/
 
-## 网盘扩容
+### 网盘扩容
 打开 https://admin.onedrive.com 登录之后在左方菜单中选择「存储」该项，将默认存储改为 5120，即 5TB。
 但是管理员账号的容量此刻依旧为1TB，接下来更改管理员容量。
 
-## 修改全局管理员自身的5T容量
+### 修改全局管理员自身的5T容量
 - 我们先安装最新的 SharePoint Online Management Shell → [下载地址](https://www.microsoft.com/zh-cn/download/details.aspx?id=35588)；
 - 点击电脑左下角开始按钮，搜索PowerShell，然后单击Windows PowerShell，此时会弹出一个命令框。
 依次输入命令：
@@ -41,7 +41,7 @@ Set-SPOSite -Identity https://weijiajin-my.sharepoint.com/personal/admin_weijiaj
 ```
 **如果你要修改现有用户的容量的话，将最后一步的OneDrive网盘地址替换成你想修改的用户地址即可。**
 
-## 微软OneDrive网盘免费升级到25T容量教程
+### 微软OneDrive网盘免费升级到25T容量教程
 
 如果OneDrive 5T不够用，这里分享个免费升级25T的方法，也是微软很早就出的一个政策，部分订阅的OneDrive网盘使用量超过90%的可免费申请提高容量到25T，有需求的可以升级下。
 
@@ -59,7 +59,7 @@ Set-SPOSite -Identity https://weijiajin-my.sharepoint.com/personal/admin_weijiaj
 
 - 最后等一天，成功的邮件就会发给你，然后这时候你就照着邮件给的方法自行升级到25T。
 
-## Microsoft 365 E5 开发者 开源自动订阅程序 
+### Microsoft 365 E5 开发者 开源自动订阅程序 
 
 教程地址：https://qyi.io/archives/687.html
 项目地址：https://github.com/luoye663/e5
