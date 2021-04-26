@@ -20,6 +20,11 @@ jobs:
       run: |
         npm i
         npm install hexo-cli -g
+        npm install hexo-generator-seo-friendly-sitemap --save
+        npm i hexo-autonofollow
+        npm i hexo-all-minifier
+        npm i hexo-neat
+        npm i hexo-related-popular-posts
         hexo clean && hexo generate
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
