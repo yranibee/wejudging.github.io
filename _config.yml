@@ -119,5 +119,35 @@ inject:
     - <meta name="msapplication-config" content="#2d89ef">
     - <meta name="theme-color" content="#ffffff">
 
+########################### Plugins ###########################
+# npm i hexo-generator-feed
+feed:
+  type: atom
+  path: atom.xml
+  limit: false
+  content: true
+  icon: /images/logo.svg
+  autodiscovery: true
 
 
+# npm i hexo-related-popular-posts
+
+# npm i hexo-neat
+neat_enable: false
+
+# npm i hexo-all-minifier
+all_minifier: true
+
+# npm i hexo-autonofollow
+nofollow:
+  enable: true
+  exclude:
+    - weijiajin.com
+
+# https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
+sitemap:
+  path: sitemap.xml
+  tag: false
+  category: false
+  page_priority: 0.4
+  post_priority: 0.6
