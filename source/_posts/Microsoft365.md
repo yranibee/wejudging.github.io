@@ -26,7 +26,7 @@ Microsoft 365 E5 开发者管理页： https://admin.microsoft.com/
 - 点击电脑左下角开始按钮，搜索PowerShell，然后单击Windows PowerShell，此时会弹出一个命令框。
 依次输入命令：
 
-```shell
+```
 #adminUPN为管理员邮箱，orgName为你设置的组织名
 $adminUPN="admin@weijiajin.onmicrosoft.com"
 $orgName="weijiajin"
@@ -37,7 +37,6 @@ Connect-SPOService -Url https://$orgName-admin.sharepoint.com -Credential $userC
 Set-SPOTenant -OneDriveStorageQuota 5242880
 #将后面的地址修改成你的OneDrive网盘地址，地址仿照下面的即可
 Set-SPOSite -Identity https://weijiajin-my.sharepoint.com/personal/admin_weijiajin_onmicrosoft_com -StorageQuota 5242880
-
 ```
 **如果你要修改现有用户的容量的话，将最后一步的OneDrive网盘地址替换成你想修改的用户地址即可。**
 
