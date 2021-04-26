@@ -25,6 +25,7 @@ jobs:
         npm i hexo-all-minifier
         npm i hexo-neat
         npm i hexo-related-popular-posts
+        npm i hexo-generator-feed
         hexo clean && hexo generate
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
