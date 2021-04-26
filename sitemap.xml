@@ -4,22 +4,12 @@
 
     <sitemap>
         <loc>https://weijiajin.com/post-sitemap.xml</loc>
-        <lastmod>2021-04-26T03:17:32.187Z</lastmod>
+        <lastmod>2021-04-26T03:17:43.855Z</lastmod>
     </sitemap>
 
     <sitemap>
         <loc>https://weijiajin.com/page-sitemap.xml</loc>
-        <lastmod>2021-04-26T03:17:32.227Z</lastmod>
-    </sitemap>
-
-    <sitemap>
-        <loc>https://weijiajin.com/category-sitemap.xml</loc>
-        <lastmod>2021-04-26T03:17:32.187Z</lastmod>
-    </sitemap>
-
-    <sitemap>
-        <loc>https://weijiajin.com/tag-sitemap.xml</loc>
-        <lastmod>2021-04-26T03:17:32.187Z</lastmod>
+        <lastmod>2021-04-26T03:17:43.891Z</lastmod>
     </sitemap>
 
 </sitemapindex>
