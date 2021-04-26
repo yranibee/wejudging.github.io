@@ -126,7 +126,7 @@ feed:
   path: atom.xml
   limit: false
   content: true
-  icon: /images/logo.svg
+  icon: /images/logo.png
   autodiscovery: true
 
 
