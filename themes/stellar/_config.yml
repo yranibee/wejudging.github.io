@@ -105,7 +105,7 @@ comments:
 footer:
   social:
      - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/25678f144c438.svg"/>'
-      url: /atom.xml
+       url: /atom.xml
      - icon: '<img src="/images/gmail.svg"/>'
        url: mailto:wejudging@gmail.com
      - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/08a41b181ce68.svg"/>'
