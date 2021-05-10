@@ -2,8 +2,8 @@
 layout: wiki
 wiki: shell
 order: -202102
-seo_title: 实用脚本
-title: 实用脚本
+seo_title: 实用脚本集合
+title: Shell
 cover: true
 logo:
   src: /images/shell.png
