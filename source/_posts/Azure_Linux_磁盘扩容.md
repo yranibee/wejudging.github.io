@@ -1,7 +1,7 @@
 ---
 title: Azure Linux 磁盘扩容
 date: 2021-05-10
-tags:[Azure,Microsoft]
+tags: [Azure,Microsoft]
 categories: linux
 cover: /images/azure.png
 ---
