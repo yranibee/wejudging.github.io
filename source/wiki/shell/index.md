@@ -33,3 +33,16 @@ python speedtest-cli
 wget https://raw.githubusercontent.com/wejudging/shell/main/qBittorrentCentOS7install.sh && chmod +x qBittorrentCentOS7install.sh
 ./qBittorrentCentOS7install.sh
 ```
+
+##### 显示内容：
+
+qBittorrentWEB地址：你的机器公网IP+端口8080
+WEB账号：admin
+WEB密码：adminadmin
+
+##### 管理命令：
+```bash
+systemctl start qbittorrent
+systemctl stop qbittorrent
+systemctl restart qbittorrent
+```
