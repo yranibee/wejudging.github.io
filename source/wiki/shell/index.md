@@ -15,12 +15,21 @@ description: 实用脚本集合
 
 #### tcp脚本
 
-{% copy wget "https://raw.githubusercontent.com/wejudging/shell/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh %}
+```bash
+wget "https://raw.githubusercontent.com/wejudging/shell/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+```
 
 #### speedtest测速脚本
 
-```shell
+```bash
 wget -O speedtest-cli https://raw.githubusercontent.com/wejudging/shell/main/speedtest.py
 chmod +x speedtest-cli
 python speedtest-
+```
+
+#### qBittorrent for CentOS7一键安装脚本
+
+```bash
+wget https://raw.githubusercontent.com/wejudging/shell/main/qBittorrentCentOS7install.sh && chmod +x qBittorrentCentOS7install.sh
+./qBittorrentCentOS7install.sh
 ```
