@@ -9,7 +9,7 @@ categories: [笔记]
 ### Hexo
 首先我们先要在本地确保 Hexo 是可以正确运行的，比如：
 
-```shell
+```bash
 hexo clean
 hexo deploy
 ```
@@ -27,7 +27,7 @@ deploy:
 > 注意：请将 repository 修改为你自己的仓库地址。
 
 ### 生成秘钥
-```shell
+```bash
 ssh-keygen -t rsa -b 4096 -C "Hexo Deploy Key" -f github-deploy-key -N ""
 ```
 
