@@ -24,7 +24,7 @@ wget "https://raw.githubusercontent.com/wejudging/shell/main/tcp.sh" && chmod +x
 ```bash
 wget -O speedtest-cli https://raw.githubusercontent.com/wejudging/shell/main/speedtest.py
 chmod +x speedtest-cli
-python speedtest-
+python speedtest-cli
 ```
 
 #### qBittorrent for CentOS7一键安装脚本
