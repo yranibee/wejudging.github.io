@@ -10,30 +10,40 @@ categories: linux
 本系统为centos7
 
 #### 安装 growpart
-
+```bash
 yum install -y epel-release
+```
 
 #### 安装 growpart
-
+```bash
 yum install -y cloud-utils
+```
 
-#### 解决编码问题
-
+#### 修改系统语言为为英文语言与编码
+```bash
 LANG=en_US.UTF-8
+```
 
 #### 扩-容块设备并重启
-
+```bash
 growpart /dev/sda 2
-
 reboot
+```
 
 #### 重启后执行
-
-xfs_growfs /dev/sda2 (xfs 文件系统) azure 执行这个
-resize2fs /dev/sda2 (ext4 文件系统)
+##### xfs 文件系统 (azure)
+```bash
+xfs_growfs /dev/sda2
+```
+##### ext4 文件系统
+```bash
+resize2fs /dev/sda2 
+```
 
 #### 查看是否 ok
-
+```bash
 df -TH
+```
+
 
 
