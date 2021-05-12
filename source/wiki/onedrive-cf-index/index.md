@@ -142,7 +142,7 @@ _强烈建议大家使用 Node version manager 比如 [n](https://github.com/tj/
 
 ```sh
 # 安装 CloudFlare Workers 官方编译部署工具
-npm i @cloudflare/wrangler -g
+sudo npm i @cloudflare/wrangler -g
 
 # 使用 npm 安装依赖
 npm install
