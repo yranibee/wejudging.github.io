@@ -95,23 +95,23 @@ _又臭又长的中文版部署指南预警！_
    4. 将 `Redirect URI (optional)` 设置为 `Web`（下拉选项框）以及 `http://localhost`（URL 地址）；
    5. 点击 `Register`.
 
-   ![](assets/register-app.png)
+   ![](/images/项目图片/onedrive-cf-index/assets/register-app.png)
 
 2. 在 `Overview` 面板获取你的 Application (client) ID - `client_id`：
 
-   ![](assets/client-id.png)
+   ![](/images/项目图片/onedrive-cf-index/assets/client-id.png)
 
 3. 打开 `Certificates & secrets` 面板，点击 `New client secret`，创建一个新的叫做 `client_secret` 的 Client secret，并将 `Expires` 设置为 `Never`。点击 `Add` 并复制 `client_secret` 的 `Value` 并保存下来 **（仅有此一次机会）**：
 
-   ![](assets/add-client-secret.png)
+   ![](/images/项目图片/onedrive-cf-index/assets/add-client-secret.png)
 
 4. 打开 `API permissions` 面板，选择 `Microsoft Graph`，选择 `Delegated permissions`，并搜索 `offline_access, Files.Read, Files.Read.All` 这三个权限，**选择这三个权限，并点击 `Add permissions`：**
 
-   ![](assets/add-permissions.png)
+   ![](/images/项目图片/onedrive-cf-index/assets/add-permissions.png)
 
    你应该成功开启这三个权限：
 
-   ![](assets/permissions-used.png)
+   ![](/images/项目图片/onedrive-cf-index/assets/permissions-used.png)
 
 5. 获取 `refresh_token`，在本机（需要 Node.js 和 npm 环境，安装和推荐配置请参考 [准备工作](#准备工作)）上面执行如下命令：
 
