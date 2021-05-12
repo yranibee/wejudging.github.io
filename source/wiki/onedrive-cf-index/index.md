@@ -75,7 +75,6 @@ wrangler secret put AUTH_PASSWORD
 https://storage.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/nyancat.gif?raw
 ```
 
-![](https://storage.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/nyancat.gif?raw)
 
 ### 其他功能
 
