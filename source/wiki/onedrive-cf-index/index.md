@@ -14,16 +14,14 @@ description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 
 
 [![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://storage.spencerwoo.com/)
-[![Deploy](https://github.com/spencerwooo/onedrive-cf-index/workflows/Deploy/badge.svg)](https://github.com/spencerwooo/onedrive-cf-index/actions?query=workflow%3ADeploy)
-[![README-CN](assets/chinese.svg)](./README-CN.md)
+[![Deploy](https://github.com/spencerwooo/onedrive-cf-index/workflows/Deploy/badge.svg)]
 
-<h5>本项目使用 CloudFlare Workers 帮助你免费部署与分享你的 OneDrive 文件。本项目极大源自：<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker">onedrive-index-cloudflare-worker</a>，致敬。</h5>
+<h5>本项目使用 CloudFlare Workers 帮助你免费部署与分享你的 OneDrive 文件。</h5>
+<h5>本项目极大源自：<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker">onedrive-index-cloudflare-worker</a>，致敬。</h5>
 
 ## Demo
 
 在线演示：[Spencer's OneDrive Index](https://storage.spencerwoo.com/).
-
-![Screenshot Demo](assets/screenshot.png)
 
 ## 功能
 
@@ -37,7 +35,7 @@ description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 
 ### 🗃️ 目录索引显示
 
-- 全新支持自定义的设计风格：[spencer.css](themes/spencer.css)；
+- 全新支持自定义的设计风格：spencer.css；
 - 支持使用 Emoji 作为文件夹图标（如果文件夹名称第一位是 Emoji 则自动开启该功能）；
 - 渲染 `README.md` 如果当前目录下包含此文件，使用 [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) 渲染样式；
 - 支持「分页」，没有一个目录仅限显示 200 个项目的限制了！
@@ -55,8 +53,6 @@ description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
   - 视频：`.mp4`, `.flv`, `.webm`, `.m3u8`. [_DEMO_](https://storage.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Multimedia/%E8%BD%A6%E5%BA%93%E5%A5%B3%E7%8E%8B%20%E9%AB%98%E8%B7%9F%E8%B9%A6%E8%BF%AA%20%E4%B9%98%E9%A3%8E%E7%A0%B4%E6%B5%AA%E7%9A%84%E5%A7%90%E5%A7%90%E4%B8%BB%E9%A2%98%E6%9B%B2%E3%80%90%E9%86%8B%E9%86%8B%E3%80%91.mp4).
 
 ### 🔒 私有文件夹
-
-![Private folders](assets/private-folder.png)
 
 我们可以给某个特定的文件夹（目录）上锁，需要认证才能访问。我们可以在 `src/auth/config.js` 文件中将我们想要设为私有文件夹的目录写入 `ENABLE_PATHS` 列表中。我们还可以自定义认证所使用的用户名 `NAME` 以及密码，其中认证密码保存于 `AUTH_PASSWORD` 环境变量中，需要使用 wrangler 来设置这一环境变量：
 
