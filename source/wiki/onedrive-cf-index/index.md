@@ -14,7 +14,7 @@ description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 
 
 [![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://storage.spencerwoo.com/)
-[![Deploy](https://github.com/spencerwooo/onedrive-cf-index/workflows/Deploy/badge.svg)]
+
 
 <h5>本项目使用 CloudFlare Workers 帮助你免费部署与分享你的 OneDrive 文件。</h5>
 <h5>本项目极大源自：<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker">onedrive-index-cloudflare-worker</a>，致敬。</h5>
