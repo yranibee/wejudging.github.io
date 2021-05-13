@@ -192,7 +192,7 @@ wrangler kv:namespace create "BUCKET" --preview
 使用 wrangler 添加 Cloudflare Workers 环境变量（有关认证密码的介绍请见 [🔒 私有文件夹](#-私有文件夹)）：
 
 ```sh
-# 添加我们的 refresh_token 和 client_secret
+# 添加我们的 refresh_token 和 client_secret（macos的终端可以粘贴不了那么多，可以用cloudflare的网页端操作）
 wrangler secret put REFRESH_TOKEN
 # ... 并在这里粘贴我们的 refresh_token
 
