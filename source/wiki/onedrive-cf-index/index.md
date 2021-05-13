@@ -182,7 +182,7 @@ wrangler kv:namespace create "BUCKET" --preview
   - 修改 driveType 下的 type 为 1 ；
   - 并根据你的 SharePoint 服务修改 hostName 和 sitePath 。
 
-使用 wrangler 添加 Cloudflare Workers 环境变量（有关认证密码的介绍请见 [🔒 私有文件夹](#-私有文件夹)）：
+使用 wrangler 添加 Cloudflare Workers 环境变量 ：
 
 ```sh
 # 添加我们的 refresh_token 和 client_secret（macos的终端可以粘贴不了那么多，可以用cloudflare的网页端操作）
