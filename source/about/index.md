@@ -17,7 +17,7 @@ header: false
 
 **遇到温柔可爱的人，觉得世界也可爱温柔。**
 
-{% navbar [文章](/) [项目](/wiki/) [书签](/bookmark/) [友链](/friends/) [留言](#comments) %}
+{% navbar [rss](/atom.xml) [邮箱](mailto:wejudging@gmail.com) [GitHub](https://github.com/wejudging) [music](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62) [volantis](https://volantis.weijiajin.com) [简历](https://resume.weijiajin.com)  [友链](https://weijiajin.com/friends)  [ondrive](https://onedrive.weijiajin.com) %}
 
 {% endabout %}
 

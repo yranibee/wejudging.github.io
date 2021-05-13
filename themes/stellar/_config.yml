@@ -116,7 +116,10 @@ footer:
        url: https://volantis.weijiajin.com
      - icon: '<img src="/images/resume.svg"/>'
        url: https://resume.weijiajin.com
-       
+     - icon: '<img src="/images/youqinglianjie.svg"/>'
+       url: https://weijiajin.com/friends/
+     - icon: '<img src="/images/OneDrive.svg"/>'
+       url: https://onedrive.weijiajin.com  
        
   license: #'[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
   source: '[GitHub](https://github.com/wejudging/wejudging.github.io)'
