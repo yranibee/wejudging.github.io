@@ -17,13 +17,6 @@ description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 [![Deploy](https://github.com/spencerwooo/onedrive-cf-index/workflows/Deploy/badge.svg)](https://github.com/spencerwooo/onedrive-cf-index/actions?query=workflow%3ADeploy)
 
 
-
-
-<h5>本项目使用 CloudFlare Workers 帮助你免费部署与分享你的 OneDrive 文件。</h5>
-<h5>本项目极大源自：<a href="https://github.com/heymind/OneDrive-Index-Cloudflare-Worker">onedrive-index-cloudflare-worker</a>，致敬。</h5>
-
-## Demo
-
 在线演示：[onedrive.weijiajin.com](https://onedrive.weijiajin.com/).
 
 ## 功能
