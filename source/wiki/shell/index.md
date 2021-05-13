@@ -46,3 +46,15 @@ systemctl start qbittorrent
 systemctl stop qbittorrent
 systemctl restart qbittorrent
 ```
+
+### 生成秘钥
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "Deploy Key" -f github-deploy-key -N ""
+```
+
+当前目录生成两个文件：
+- github-deploy-key —— 私钥
+- github-deploy-key.pub —— 公钥
+
+
