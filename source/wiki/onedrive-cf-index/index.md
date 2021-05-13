@@ -217,8 +217,19 @@ wrangler preview
 wrangler publish
 ```
 
-我们也可以创建一个 GitHub Actions 来在每次  push  到 GitHub 仓库时自动发布新的 Worker，详情参考：[main.yml]()。
 
+### GitHub Actions 自动部署
+
+我们也可以创建一个 GitHub Actions 来在每次  push  到 GitHub 仓库时自动发布新的 Worker，详情参考：[main.yml](https://raw.githubusercontent.com/wejudzaiging/onedrive-cf-index/main/.github/workflows/main.yml)。
+
+- secrets.CF_API_TOKEN 是在 GitHub 项目设置的 secrets 里设置（只需要设置这一个环境变量就可以了）
+- CF_API_TOKEN 的值  是在执行  wrangler login 这个命令后存储在自己的电脑
+- 示例登录授权api成功后，我是这样获取的：
+```bash
+vi /Users/weijiajin/.wrangler/config/default.toml
+```
+
+### 域名下部署
 
 如果想在自己的域名下部署 Cloudflare Worker，请参考：[How to Setup Cloudflare Workers on a Custom Domain](https://www.andressevilla.com/how-to-setup-cloudflare-workers-on-a-custom-domain/)。
 
