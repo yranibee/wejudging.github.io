@@ -87,7 +87,7 @@ _又臭又长的中文版部署指南预警！_
    1. 使用你的 Microsoft 账户登录，选择 New registration ；
    2. 在 Name 处设置 Blade app 的名称，比如 my-onedrive-cf-index ；
    3. 将 Supported account types 设置为 Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox) 。OneDrive 世纪互联用户设置为：任何组织目录（任何 Azure AD 目录 - 多租户）中的帐户；
-   4. 将 Redirect URI (optional) 设置为 Web（下拉选项框）以及 http://localhost（URL 地址）；
+   4. 将 Redirect URI (optional) 设置为 Web（下拉选项框）以及 http://localhost ；
    5. 点击 Register.
 
    ![](/images/项目图片/onedrive-cf-index/assets/register-app.png)
@@ -96,11 +96,11 @@ _又臭又长的中文版部署指南预警！_
 
    ![](/images/项目图片/onedrive-cf-index/assets/client-id.png)
 
-3. 打开 Certificates & secrets 面板，点击 `New client secret`，创建一个新的叫做 `client_secret` 的 Client secret，并将 `Expires` 设置为 `Never`。点击 `Add` 并复制 `client_secret` 的 `Value` 并保存下来 **（仅有此一次机会）**：
+3. 打开 Certificates & secrets 面板，点击 New client secret，创建一个新的叫做 client_secret 的 Client secret，并将 Expires 设置为 Never。点击 Add 并复制 client_secret 的 Value 并保存下来 **（仅有此一次机会）**：
 
    ![](/images/项目图片/onedrive-cf-index/assets/add-client-secret.png)
 
-4. 打开 `API permissions` 面板，选择 `Microsoft Graph`，选择 `Delegated permissions`，并搜索 `offline_access, Files.Read, Files.Read.All` 这三个权限，**选择这三个权限，并点击 `Add permissions`：**
+4. 打开 API permissions 面板，选择 Microsoft Graph，选择 Delegated permissions，并搜索 offline_access, Files.Read, Files.Read.All 这三个权限，**选择这三个权限，并点击 Add permissions：**
 
    ![](/images/项目图片/onedrive-cf-index/assets/add-permissions.png)
 
@@ -108,7 +108,7 @@ _又臭又长的中文版部署指南预警！_
 
    ![](/images/项目图片/onedrive-cf-index/assets/permissions-used.png)
 
-5. 获取 `refresh_token`，在本机（需要 Node.js 和 npm 环境，安装和推荐配置请参考 [准备工作](#准备工作)）上面执行如下命令：
+5. 获取 refresh_token，在本机（需要 Node.js 和 npm 环境，安装和推荐配置请参考 [准备工作](#准备工作)）上面执行如下命令：
 
    ```sh
    npx @beetcb/ms-graph-cli
@@ -117,25 +117,25 @@ _又臭又长的中文版部署指南预警！_
 - 输入 ID 与 密码
 - 默认 http://localhost
 - **复制终端的地址粘贴到浏览器（mac终端有个bug会出现几个换行，要手动删除变成完整的链接）**
-- 授权后 复制链接里面的 `refresh_token`
+- 授权后 复制链接里面的 refresh_token
 
-根据你自己的情况选择合适的选项，并输入我们上面获取到的一系列 token 令牌配置等，其中 `redirect_url` 可以直接设置为 `http://localhost`。
+根据你自己的情况选择合适的选项，并输入我们上面获取到的一系列 token 令牌配置等，其中 redirect_url 可以直接设置为 http://localhost。
 
-6. 最后，在我们的 OneDrive 中创建一个公共分享文件夹，比如 `/Public` 即可。建议不要直接分享根目录!
+6. 最后，在我们的 OneDrive 中创建一个公共分享文件夹，比如 /Public 即可。建议不要直接分享根目录!
 
 最后，这么折腾完，我们应该成功拿到如下的几个凭证：
 
-- `refresh_token`
-- `client_id`
-- `client_secret`
-- `redirect_uri`
-- `base`：默认为 `/Public`。
+- refresh_token
+- client_id
+- client_secret
+- redirect_uri
+- base：默认为 /Public。
 
 _是，我知道很麻烦，但是这是微软，大家理解一下。🤷🏼‍♂️_
 
 ### 准备工作
 
-Fork 再 clone 或者直接 clone 本仓库，并安装依赖 Node.js、`npm` 以及 `wrangler`。
+Fork 再 clone 或者直接 clone 本仓库，并安装依赖 Node.js、npm 以及 wrangler。
 
 建议使用 homebrew 安装配置环境 
 
@@ -153,15 +153,15 @@ wrangler login
 wrangler whoami
 ```
 
-打开 <https://dash.cloudflare.com/login> 登录 CloudFlare，选择自己的域名，**再向下滚动一点，我们就能看到右侧栏处我们的 `account_id` 以及 `zone_id` 了。** 同时，在 `Workers` -> `Manage Workers` -> `Create a Worker` 处创建一个 **DRAFT** worker。
+打开 <https://dash.cloudflare.com/login> 登录 CloudFlare，选择自己的域名，**再向下滚动一点，我们就能看到右侧栏处我们的 account_id 以及 zone_id 了。** 同时，在 Workers -> Manage Workers -> Create a Worker 处创建一个 **onerive** worker。
 
-修改我们的 [`wrangler.toml`](wrangler.toml)：
+修改我们的 wrangler.toml ：
 
-- `name`：就是我们刚刚创建的 draft worker 名称，我们的 Worker 默认会发布到这一域名下：`<name>.<worker_subdomain>.workers.dev`；
-- `account_id`：我们的 Cloudflare Account ID；
-- `zone_id`：我们的 Cloudflare Zone ID。
+- name：就是我们刚刚创建的 onedrive worker 名称，我们的 Worker 默认会发布到这一域名下：onedrive.weijiajin.workers.dev ；
+- account_id ：我们的 Cloudflare Account ID；
+- zone_id ：我们的 Cloudflare Zone ID。
 
-创建叫做 `BUCKET` 的 Cloudflare Workers KV bucket：
+创建叫做 BUCKET 的 Cloudflare Workers KV bucket：
 
 ```sh
 # 创建 KV bucket
@@ -171,24 +171,25 @@ wrangler kv:namespace create "BUCKET"
 wrangler kv:namespace create "BUCKET" --preview
 ```
 
-修改 [`wrangler.toml`](wrangler.toml) 里面的 `kv_namespaces`：
+修改 wrangler.toml 里面的 kv_namespaces ：
 
-- `kv_namespaces`：我们的 Cloudflare KV namespace，仅需替换 `id` 和（或者）`preview_id` 即可。_如果不需要预览功能，那么移除 `preview_id` 即可。_
+- kv_namespaces ：我们的 Cloudflare KV namespace，仅需替换 id 和（或者） preview_id 即可。
+- 如果不需要预览功能，那么移除 preview_id 即可。
 
-修改 [`src/config/default.js`](src/config/default.js)：
+修改 src/config/default.js ：
 
-- `client_id`：刚刚获取的 OneDrive `client_id`；
-- `base`：之前创建的 `base` 目录；
-- 如果你部署常规国际版 OneDrive，那么忽略以下步骤即可；
+- client_id ：刚刚获取的 OneDrive client_id ；
+- base ：之前创建的 base 目录；
+- 如果你部署常规国际版 OneDrive，那么忽略以下步骤即可；(我的是这种)
 - 如果你部署的是由世纪互联运营的中国版 OneDrive：
-  - 修改 `type` 下的 `accountType` 为 `1`；
-  - 保持 `driveType` 不变；
+  - 修改 type 下的 accountType 为 1 ；
+  - 保持 driveType 不变；
 - 如果你部署的是 SharePoint 服务：
-  - 保持 `accountType` 不变；
-  - 修改 `driveType` 下的 `type` 为 `1`；
-  - 并根据你的 SharePoint 服务修改 `hostName` 和 `sitePath`。
+  - 保持 accountType 不变；
+  - 修改 driveType 下的 type 为 1 ；
+  - 并根据你的 SharePoint 服务修改 hostName 和 sitePath 。
 
-使用 `wrangler` 添加 Cloudflare Workers 环境变量（有关认证密码的介绍请见 [🔒 私有文件夹](#-私有文件夹)）：
+使用 wrangler 添加 Cloudflare Workers 环境变量（有关认证密码的介绍请见 [🔒 私有文件夹](#-私有文件夹)）：
 
 ```sh
 # 添加我们的 refresh_token 和 client_secret
@@ -204,7 +205,7 @@ wrangler secret put AUTH_PASSWORD
 
 ### 编译与部署
 
-我们可以使用 `wrangler` 预览部署：
+我们可以使用 wrangler 预览部署：
 
 ```sh
 wrangler preview
@@ -216,21 +217,20 @@ wrangler preview
 wrangler publish
 ```
 
-我们也可以创建一个 GitHub Actions 来在每次 `push` 到 GitHub 仓库时自动发布新的 Worker，详情参考：[main.yml](.github/workflows/main.yml)。
+我们也可以创建一个 GitHub Actions 来在每次  push  到 GitHub 仓库时自动发布新的 Worker，详情参考：[main.yml]()。
+
 
 如果想在自己的域名下部署 Cloudflare Worker，请参考：[How to Setup Cloudflare Workers on a Custom Domain](https://www.andressevilla.com/how-to-setup-cloudflare-workers-on-a-custom-domain/)。
 
 ## 样式、内容的自定义
 
-- 我们 **应该** 更改默认「着落页面」，直接修改 [src/folderView.js](src/folderView.js#L51-L55) 中 `intro` 的 HTML 即可；
+- 我们 **应该** 更改默认「着落页面」，直接修改 src/folderView.js 中 `intro` 的 HTML 即可；
 - 我们也 **应该** 更改页面的 header，直接修改 [src/render/htmlWrapper.js](src/render/htmlWrapper.js#L24) 即可；
 - 样式 CSS 文件位于 [themes/spencer.css](themes/spencer.css)，可以根据自己需要自定义此文件，同时也需要更新 [src/render/htmlWrapper.js](src/render/htmlWrapper.js#L3) 文件中的 commit HASH；
 - 我们还可以自定义 Markdown 渲染 CSS 样式、PrismJS 代码高亮样式，等等等。
 
 ---
 
-🏵 **onedrive-cf-index** ©Spencer Woo. Released under the MIT License.
+🏵 **Authored and maintained by Spencer Woo.**
 
-Authored and maintained by Spencer Woo.
 
-[@Portfolio](https://spencerwoo.com/) · [@Blog](https://blog.spencerwoo.com/) · [@GitHub](https://github.com/spencerwooo)
