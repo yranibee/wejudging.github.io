@@ -40,24 +40,24 @@ description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 
 - 全新支持自定义的设计风格：spencer.css；
 - 支持使用 Emoji 作为文件夹图标（如果文件夹名称第一位是 Emoji 则自动开启该功能）；
-- 渲染 `README.md` 如果当前目录下包含此文件，使用 [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) 渲染样式；
+- 渲染 README.md 如果当前目录下包含此文件，使用 [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) 渲染样式；
 - 支持「分页」，没有一个目录仅限显示 200 个项目的限制了！
 
 ### 📁 文件在线预览
 
 - 根据文件类型渲染文件图标，图标使用 [Font Awesome icons](https://fontawesome.com/)；
 - 支持预览：
-  - 纯文本：`.txt`...
-  - Markdown 格式文本：`.md`, `.mdown`, `.markdown`...
-  - 图片（支持 Medium 风格的图片缩放）：`.png`, `.jpg`, and `.gif`.
-  - 代码高亮：`.js`, `.py`, `.c`, `.json`...
-  - PDF（支持懒加载、加载进度、Chrome 内置 PDF 阅读器）：`.pdf`...
-  - 音乐：`.mp3`, `.aac`, `.wav`, `.oga`...
-  - 视频：`.mp4`, `.flv`, `.webm`, `.m3u8`...
+  - 纯文本：.txt ...
+  - Markdown 格式文本：.md , .mdown , .markdown ...
+  - 图片（支持 Medium 风格的图片缩放）： .png , .jpg , and .gif ...
+  - 代码高亮： .js , .py , .c ,  .json ...
+  - PDF（支持懒加载、加载进度、Chrome 内置 PDF 阅读器）： .pdf ...
+  - 音乐： .mp3 , .aac , .wav , .oga ...
+  - 视频： .mp4 , .flv , .webm , .m3u8 ...
 
 ### 🔒 私有文件夹
 
-我们可以给某个特定的文件夹（目录）上锁，需要认证才能访问。我们可以在 `src/auth/config.js` 文件中将我们想要设为私有文件夹的目录写入 `ENABLE_PATHS` 列表中。我们还可以自定义认证所使用的用户名 `NAME` 以及密码，其中认证密码保存于 `AUTH_PASSWORD` 环境变量中，需要使用 wrangler 来设置这一环境变量：
+我们可以给某个特定的文件夹（目录）上锁，需要认证才能访问。我们可以在 src/auth/config.js  文件中将我们想要设为私有文件夹的目录写入 ENABLE_PATHS 列表中。我们还可以自定义认证所使用的用户名 NAME 以及密码，其中认证密码保存于 AUTH_PASSWORD 环境变量中，需要使用 wrangler 来设置这一环境变量：
 
 ```bash
 wrangler secret put AUTH_PASSWORD
@@ -68,16 +68,9 @@ wrangler secret put AUTH_PASSWORD
 
 ### ⬇️ 代理下载文件 / 文件直链访问
 
-- [可选] Proxied download（代理下载文件）：`?proxied` - 经由 CloudFlare Workers 下载文件，如果（1）`config/default.js` 中的 `proxyDownload` 为 `true`，以及（2）使用参数 `?proxied` 请求文件；
-- [可选] Raw file download（文件直链访问）：`?raw` - 返回文件直链而不是预览界面；
-- 两个参数可以一起使用，即 `?proxied&raw` 和 `?raw&proxied` 均有效。
-
-是的，这也就意味着你可以将这一项目用来搭建「图床」，或者用于搭建静态文件部署服务，比如下面的图片链接：
-
-```
-https://storage.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/nyancat.gif?raw
-```
-
+- [可选] Proxied download（代理下载文件）：?proxied - 经由 CloudFlare Workers 下载文件，如果（1）config/default.js 中的 proxyDownload 为 true，以及（2）使用参数 ?proxied 请求文件；
+- [可选] Raw file download（文件直链访问）：?raw - 返回文件直链而不是预览界面；
+- 两个参数可以一起使用，即 ?proxied&raw 和 ?raw&proxied 均有效。
 
 ### 其他功能
 
@@ -91,19 +84,19 @@ _又臭又长的中文版部署指南预警！_
 
 1. 访问此 URL 创建新的 Blade app：[Microsoft Azure App registrations](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)（普通版 OneDrive）或 [Microsoft Azure.cn App registrations](https://portal.azure.cn/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade)（OneDrive 世纪互联版本），**建议将语言设置为「英语」以保证以下步骤中提到的模块和按钮的名称一致**：
 
-   1. 使用你的 Microsoft 账户登录，选择 `New registration`；
-   2. 在 `Name` 处设置 Blade app 的名称，比如 `my-onedrive-cf-index`；
-   3. 将 `Supported account types` 设置为 `Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)`。OneDrive 世纪互联用户设置为：`任何组织目录（任何 Azure AD 目录 - 多租户）中的帐户`；
-   4. 将 `Redirect URI (optional)` 设置为 `Web`（下拉选项框）以及 `http://localhost`（URL 地址）；
-   5. 点击 `Register`.
+   1. 使用你的 Microsoft 账户登录，选择 New registration ；
+   2. 在 Name 处设置 Blade app 的名称，比如 my-onedrive-cf-index ；
+   3. 将 Supported account types 设置为 Accounts in any organizational directory (Any Azure AD directory - Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox) 。OneDrive 世纪互联用户设置为：任何组织目录（任何 Azure AD 目录 - 多租户）中的帐户；
+   4. 将 Redirect URI (optional) 设置为 Web（下拉选项框）以及 http://localhost（URL 地址）；
+   5. 点击 Register.
 
    ![](/images/项目图片/onedrive-cf-index/assets/register-app.png)
 
-2. 在 `Overview` 面板获取你的 Application (client) ID - `client_id`：
+2. 在 Overview 面板获取你的 Application (client) ID - client_id：
 
    ![](/images/项目图片/onedrive-cf-index/assets/client-id.png)
 
-3. 打开 `Certificates & secrets` 面板，点击 `New client secret`，创建一个新的叫做 `client_secret` 的 Client secret，并将 `Expires` 设置为 `Never`。点击 `Add` 并复制 `client_secret` 的 `Value` 并保存下来 **（仅有此一次机会）**：
+3. 打开 Certificates & secrets 面板，点击 `New client secret`，创建一个新的叫做 `client_secret` 的 Client secret，并将 `Expires` 设置为 `Never`。点击 `Add` 并复制 `client_secret` 的 `Value` 并保存下来 **（仅有此一次机会）**：
 
    ![](/images/项目图片/onedrive-cf-index/assets/add-client-secret.png)
 
@@ -120,10 +113,13 @@ _又臭又长的中文版部署指南预警！_
    ```sh
    npx @beetcb/ms-graph-cli
    ```
+- 选择onedrive
+- 输入 ID 与 密码
+- 默认 http://localhost
+- **复制终端的地址粘贴到浏览器（mac终端有个bug会出现几个换行，要手动删除变成完整的链接）**
+- 授权后 复制链接里面的 `refresh_token`
 
-   <div align="center"><img src="https://raw.githubusercontent.com/beetcb/ms-graph-cli/master/media/demo.svg" alt="demo gif" width="560px" /></div>
-
-   根据你自己的情况选择合适的选项，并输入我们上面获取到的一系列 token 令牌配置等，其中 `redirect_url` 可以直接设置为 `http://localhost`。有关命令行工具的具体使用方法请参考：[beetcb/ms-graph-cli](https://github.com/beetcb/ms-graph-cli)。
+根据你自己的情况选择合适的选项，并输入我们上面获取到的一系列 token 令牌配置等，其中 `redirect_url` 可以直接设置为 `http://localhost`。
 
 6. 最后，在我们的 OneDrive 中创建一个公共分享文件夹，比如 `/Public` 即可。建议不要直接分享根目录!
 
@@ -141,7 +137,7 @@ _是，我知道很麻烦，但是这是微软，大家理解一下。🤷🏼�
 
 Fork 再 clone 或者直接 clone 本仓库，并安装依赖 Node.js、`npm` 以及 `wrangler`。
 
-_强烈建议大家使用 Node version manager 比如 [n](https://github.com/tj/n) 或者 [nvm](https://github.com/nvm-sh/nvm) 安装 Node.js 和 `npm`，这样我们全局安装的 `wrangler` 就可以在我们的用户目录下安装保存配置文件了，也就不会遇到奇奇怪怪的权限问题了。_
+建议使用 homebrew 安装配置环境 
 
 ```sh
 # 安装 CloudFlare Workers 官方编译部署工具
