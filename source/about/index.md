@@ -21,8 +21,7 @@ header: false
 [订阅](/atom.xml) 
 [邮箱](mailto:wejudging@gmail.com)
 [源码](https://github.com/wejudging)
-[音乐](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62) 
-[简历](https://resume.weijiajin.com)  
+[音乐](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62)  
 [友链](https://weijiajin.com/friends)  
 [网盘](https://onedrive.weijiajin.com) %}
 
