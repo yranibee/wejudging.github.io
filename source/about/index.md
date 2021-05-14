@@ -19,6 +19,8 @@ header: false
 
 {% navbar [rss](/atom.xml) [邮箱](mailto:wejudging@gmail.com) [GitHub](https://github.com/wejudging) [music](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62) [volantis](https://volantis.weijiajin.com) [简历](https://resume.weijiajin.com)  [友链](https://weijiajin.com/friends)  [ondrive](https://onedrive.weijiajin.com) %}
 
+{% navbar [简历](https://resume.weijiajin.com)  [友链](https://weijiajin.com/friends)  [ondrive](https://onedrive.weijiajin.com) %}
+
 {% endabout %}
 
 
