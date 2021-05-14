@@ -17,11 +17,10 @@ header: false
 
 **遇到温柔可爱的人，觉得世界也可爱温柔。**
 
-{% navbar [RSS](/atom.xml) [邮箱](mailto:wejudging@gmail.com) [GITHUB](https://github.com/wejudging) [音乐](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62) [VOLANTIS](https://volantis.weijiajin.com) 
-[简历](https://resume.weijiajin.com)  [友链](https://weijiajin.com/friends)  [网盘](https://onedrive.weijiajin.com) %}
+{% navbar [RSS](/atom.xml) [邮箱](mailto:wejudging@gmail.com) [GITHUB](https://github.com/wejudging) [音乐](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62) [VOLANTIS](https://volantis.weijiajin.com) %}
+{% navbar [简历](https://resume.weijiajin.com)  [友链](https://weijiajin.com/friends)  [网盘](https://onedrive.weijiajin.com) %}
 
 {% endabout %}
-
 
 
 ## 兴趣爱好
