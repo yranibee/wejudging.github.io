@@ -102,7 +102,7 @@ _又臭又长的中文版部署指南预警！_
 
 5. 获取 refresh_token，在本机（需要 Node.js 和 npm 环境，安装和推荐配置请参考 [准备工作](#准备工作)）上面执行如下命令：
 
-   ```sh
+   ```bash
    npx @beetcb/ms-graph-cli
    ```
 - 选择onedrive
@@ -131,7 +131,7 @@ Fork 再 clone 或者直接 clone 本仓库，并安装依赖 Node.js、npm 以�
 
 建议使用 homebrew 安装配置环境 
 
-```sh
+```bash
 # 安装 CloudFlare Workers 官方编译部署工具
 sudo npm i @cloudflare/wrangler -g
 
@@ -155,7 +155,7 @@ wrangler whoami
 
 创建叫做 BUCKET 的 Cloudflare Workers KV bucket：
 
-```sh
+```bash
 # 创建 KV bucket
 wrangler kv:namespace create "BUCKET"
 
@@ -183,7 +183,7 @@ wrangler kv:namespace create "BUCKET" --preview
 
 使用 wrangler 添加 Cloudflare Workers 环境变量 ：
 
-```sh
+```bash
 # 添加我们的 refresh_token 和 client_secret（macos的终端可以粘贴不了那么多，可以用cloudflare的网页端操作）
 wrangler secret put REFRESH_TOKEN
 # ... 并在这里粘贴我们的 refresh_token
@@ -199,13 +199,13 @@ wrangler secret put AUTH_PASSWORD
 
 我们可以使用 wrangler 预览部署：
 
-```sh
+```bash
 wrangler preview
 ```
 
 如果一切顺利，我们即可使用如下命令发布 Cloudflare Worker：
 
-```sh
+```bash
 wrangler publish
 ```
 
