@@ -177,6 +177,11 @@ plugins:
     interval: 100 # ms
     scale: 1 # 0.1~1
 
+  # Codeblock Copy Button
+  clipboard:
+    enable: true
+    js: https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js  
+
 style:
   darkmode: auto # set 'auto' to enable, set 'false' to disable
 
