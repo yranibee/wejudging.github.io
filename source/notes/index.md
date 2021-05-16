@@ -1,8 +1,8 @@
 ---
 robots: noindex,nofollow
 sitemap: false
-menu_id: bookmark
-seo_title: 书签
+menu_id: notes
+seo_title: 便笺
 header: false
 breadcrumb: false
 ---
