@@ -4,7 +4,7 @@ const using = '[' + stellar_info('name') + '](' + stellar_info('tree') + ')';
 const source = theme.footer.source;
 function layoutDiv() {
   var wrapper = '';
-  wrapper += '<footer class="page-footer fs12"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><hr><div>';
+  wrapper += '<footer class="page-footer fs12"><hr><div>';
   if (theme.footer.license) {
     wrapper += markdown(__('footer.license', theme.footer.license));
   }
@@ -13,7 +13,7 @@ function layoutDiv() {
   } else {
     wrapper += markdown(__('footer.info_not_open_source',source));
   }
-  wrapper += '<span id="busuanzi_container_site_pv"> ｜ 本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></div></footer>';
+  wrapper += '</div></footer>';
   return wrapper;
 }
 %>
