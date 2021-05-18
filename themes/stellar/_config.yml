@@ -147,8 +147,8 @@ plugins:
   # swiper
   swiper:
     enable: false
-    css: https://unpkg.com/swiper/swiper-bundle.min.css
-    js: https://unpkg.com/swiper/swiper-bundle.min.js
+    css: https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css
+    js: https://cdn.jsdelivr.net/npm/swiper-bundle.min.js
   # issues api
   sitesjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/plugins/sites.js
   friendsjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/plugins/friends.js
