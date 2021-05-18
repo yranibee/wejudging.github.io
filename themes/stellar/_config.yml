@@ -146,7 +146,7 @@ plugins:
   fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css
   # swiper
   swiper:
-    enable: false
+    enable: true
     css: https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css
     js: https://cdn.jsdelivr.net/npm/swiper-bundle.min.js
   # issues api
