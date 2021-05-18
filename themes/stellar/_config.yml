@@ -150,8 +150,8 @@ plugins:
     css: https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css
     js: https://cdn.jsdelivr.net/npm/swiper-bundle.min.js
   # issues api
-  sitesjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/plugins/sites.js
-  friendsjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/plugins/friends.js
+  sitesjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/js/plugins/sites.js
+  friendsjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/js/plugins/friends.js
 
   ## optional plugins ##
   # preload
