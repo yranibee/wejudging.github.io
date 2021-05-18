@@ -6,7 +6,7 @@ seo_title: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 title: onedrive-cf-index
 cover: true
 logo:
-  src: /images/onedrive-cf-index.png
+  src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/onedrive-cf-index.png
   small: 120px
   large: 240px
 description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
@@ -82,23 +82,23 @@ _又臭又长的中文版部署指南预警！_
    4. 将 Redirect URI (optional) 设置为 Web（下拉选项框）以及 http://localhost ；
    5. 点击 Register.
 
-   ![](/images/项目图片/onedrive-cf-index/assets/register-app.png)
+   ![](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/onedrive-cf-index/assets/register-app.png)
 
 2. 在 Overview 面板获取你的 Application (client) ID - client_id：
 
-   ![](/images/项目图片/onedrive-cf-index/assets/client-id.png)
+   ![](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/onedrive-cf-index/assets/client-id.png)
 
 3. 打开 Certificates & secrets 面板，点击 New client secret，创建一个新的叫做 client_secret 的 Client secret，并将 Expires 设置为 Never。点击 Add 并复制 client_secret 的 Value 并保存下来 **（仅有此一次机会）**：
 
-   ![](/images/项目图片/onedrive-cf-index/assets/add-client-secret.png)
+   ![](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/onedrive-cf-index/assets/add-client-secret.png)
 
 4. 打开 API permissions 面板，选择 Microsoft Graph，选择 Delegated permissions，并搜索 offline_access, Files.Read, Files.Read.All 这三个权限，**选择这三个权限，并点击 Add permissions：**
 
-   ![](/images/项目图片/onedrive-cf-index/assets/add-permissions.png)
+   ![](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/onedrive-cf-index/assets/add-permissions.png)
 
    你应该成功开启这三个权限：
 
-   ![](/images/项目图片/onedrive-cf-index/assets/permissions-used.png)
+   ![](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/onedrive-cf-index/assets/permissions-used.png)
 
 5. 获取 refresh_token，在本机（需要 Node.js 和 npm 环境，安装和推荐配置请参考 [准备工作](#准备工作)）上面执行如下命令：
 
@@ -228,8 +228,8 @@ vi /Users/weijiajin/.wrangler/config/default.toml
 ## 样式、内容的自定义
 
 - 我们 **应该** 更改默认「着落页面」，直接修改 src/folderView.js 中 `intro` 的 HTML 即可；
-- 我们也 **应该** 更改页面的 header，直接修改 [src/render/htmlWrapper.js](src/render/htmlWrapper.js#L24) 即可；
-- 样式 CSS 文件位于 [themes/spencer.css](themes/spencer.css)，可以根据自己需要自定义此文件，同时也需要更新 [src/render/htmlWrapper.js](src/render/htmlWrapper.js#L3) 文件中的 commit HASH；
+- 我们也 **应该** 更改页面的 header，直接修改 src/render/htmlWrapper.js 即可；
+- 样式 CSS 文件位于 themes/spencer.css，可以根据自己需要自定义此文件，同时也需要更新 src/render/htmlWrapper.js  文件中的 commit HASH；
 - 我们还可以自定义 Markdown 渲染 CSS 样式、PrismJS 代码高亮样式，等等等。
 
 ---
