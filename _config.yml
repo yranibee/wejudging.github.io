@@ -1,6 +1,6 @@
 # Site
 title: weijiajin
-avatar: /images/logo.svg
+avatar: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/logo.svg
 subtitle: '「Stay Hungry.Stay Foolish.」'
 description: 'all of weijiajin'
 keywords:
@@ -109,12 +109,12 @@ wiki_dir: wiki
 
 inject:
   head:
-    - <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-    - <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-    - <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-    - <link rel="manifest" href="/images/favicon/site.webmanifest">
-    - <link rel="mask-icon" href="/images/logo.svg" color="#5bbad5">
-    - <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    - <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/favicon/apple-touch-icon.png">
+    - <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/favicon/favicon-32x32.png">
+    - <link rel="icon" type="image/png" sizes="16x16" href="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/favicon/favicon-16x16.png">
+    - <link rel="manifest" href="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/favicon/site.webmanifest">
+    - <link rel="mask-icon" href="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/logo.svg" color="#5bbad5">
+    - <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/favicon/favicon.ico">
     - <meta name="msapplication-TileColor" content="#2d89ef">
     - <meta name="msapplication-config" content="#2d89ef">
     - <meta name="theme-color" content="#ffffff">
@@ -126,7 +126,7 @@ feed:
   path: atom.xml
   limit: false
   content: true
-  icon: /images/logo.png
+  icon: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/logo.png
   autodiscovery: true
 
 
