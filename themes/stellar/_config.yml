@@ -3,8 +3,8 @@ stellar:
   version: '1.0.1'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
-  cdn_css: # Use cdn links instead of /css/main.css
-  cdn_js: # Use cdn links instead of /js/main.js
+  cdn_css: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/css/main.css
+  cdn_js: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/main.js
 
 
 ######## head tags ########
@@ -105,20 +105,20 @@ comments:
 footer:
   social:
      - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/25678f144c438.svg"/>'
-       url: /atom.xml
-     - icon: '<img src="/images/gmail.svg"/>'
+       url: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/atom.xml
+     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/gmail.svg"/>'
        url: mailto:wejudging@gmail.com
      - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/08a41b181ce68.svg"/>'
        url: https://github.com/wejudging
      - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/cf1ae151f9e83.svg"/>'
        url: https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62
-     - icon: '<img src="/images/volantis.svg"/>'
+     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/volantis.svg"/>'
        url: https://volantis.weijiajin.com
-     - icon: '<img src="/images/resume.svg"/>'
+     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/resume.svg"/>'
        url: https://resume.weijiajin.com
-     - icon: '<img src="/images/youqinglianjie.svg"/>'
+     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/youqinglianjie.svg"/>'
        url: https://weijiajin.com/friends/
-     - icon: '<img src="/images/OneDrive.svg"/>'
+     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/OneDrive.svg"/>'
        url: https://onedrive.weijiajin.com  
        
   license: #'[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
@@ -150,8 +150,8 @@ plugins:
     css: https://unpkg.com/swiper/swiper-bundle.min.css
     js: https://unpkg.com/swiper/swiper-bundle.min.js
   # issues api
-  sitesjs: /js/plugins/sites.js
-  friendsjs: /js/plugins/friends.js
+  sitesjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/plugins/sites.js
+  friendsjs: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@raw/public/js/plugins/friends.js
 
   ## optional plugins ##
   # preload
