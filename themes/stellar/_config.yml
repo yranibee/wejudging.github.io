@@ -3,8 +3,8 @@ stellar:
   version: '1.0.1'
   homepage: 'https://xaoxuu.com/wiki/stellar/'
   repo: 'https://github.com/xaoxuu/hexo-theme-stellar'
-  cdn_css: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/css/main.css
-  cdn_js: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/js/main.js
+  cdn_css: #https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/css/main.css
+  cdn_js: #https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/js/main.js
 
 
 ######## head tags ########
