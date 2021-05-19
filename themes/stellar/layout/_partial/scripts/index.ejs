@@ -122,11 +122,6 @@
     stellar.plugins.preload = Object.assign(<%- JSON.stringify(theme.plugins.preload) %>);
   }
 </script>
-
-<script type="text/javascript" src="/js/plugins/clipboard.min.js"></script>	
-<script type="text/javascript" src="/js/plugins/custom.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 <!-- required -->
 <% if (theme.stellar.cdn_js) { %>
   <%- js({src: theme.stellar.cdn_js, async: true}) %>
