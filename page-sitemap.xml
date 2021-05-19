@@ -10,8 +10,17 @@
     
     
     <url>
+        <loc>https://weijiajin.com/wiki/shell/</loc>
+        <lastmod>2021-05-19T10:06:40.286Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://weijiajin.com/wiki/motrix/</loc>
-        <lastmod>2021-05-19T09:55:16.910Z</lastmod>
+        <lastmod>2021-05-19T10:06:40.282Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -20,16 +29,7 @@
     
     <url>
         <loc>https://weijiajin.com/wiki/onedrive-cf-index/</loc>
-        <lastmod>2021-05-19T09:55:16.910Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/shell/</loc>
-        <lastmod>2021-05-19T09:55:16.910Z</lastmod>
+        <lastmod>2021-05-19T10:06:40.282Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -38,7 +38,7 @@
     
     <url>
         <loc>https://weijiajin.com/wiki/categories/%25E5%25BC%2580%25E6%25BA%2590/</loc>
-        <lastmod>2021-05-19T09:55:16.910Z</lastmod>
+        <lastmod>2021-05-19T10:06:40.282Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -47,7 +47,7 @@
     
     <url>
         <loc>https://weijiajin.com/about/</loc>
-        <lastmod>2021-05-19T09:55:16.866Z</lastmod>
+        <lastmod>2021-05-19T10:06:40.242Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
