@@ -34,7 +34,7 @@ meta:
     month: 个月前
 
 footer:
-  license: ''
+  license: '![又拍云](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/又拍云.svg)](https://www.upyun.com)'
   info_not_open_source: '本站由 %s 创建,您可以在 %s 找到本站源码。'
   info_open_source: '[weijiajin © 2021](https://weijiajin.com/about)  |  [鲁ICP备18011116号-2](https://beian.miit.gov.cn/)  |  本站源码在 %s '
 
