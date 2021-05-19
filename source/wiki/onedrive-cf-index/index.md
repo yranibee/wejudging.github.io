@@ -12,12 +12,6 @@ logo:
 description: 由 CloudFlare Workers 强力驱动的 OneDrive 索引
 ---
 
-
-[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://workers.cloudflare.com/)
-
-[![Deploy](https://img.shields.io/badge/Github%20Actions-f38020?logo=github&logoColor=f38020&labelColor=282d33)](https://github.com/wejudging/onedrive-cf-index/actions)
-
-
 在线演示：[onedrive.weijiajin.com](https://onedrive.weijiajin.com/).
 
 ## 功能
@@ -237,5 +231,8 @@ vi /Users/weijiajin/.wrangler/config/default.toml
 ---
 
 🏵 **Authored and maintained by Spencer Woo.**
+
+<p>[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://workers.cloudflare.com/) [![Deploy](https://img.shields.io/badge/Github%20Actions-f38020?logo=github&logoColor=f38020&labelColor=282d33)](https://github.com/wejudging/onedrive-cf-index/actions)</p>
+
 
 
