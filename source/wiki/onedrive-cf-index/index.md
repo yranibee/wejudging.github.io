@@ -232,7 +232,13 @@ vi /Users/weijiajin/.wrangler/config/default.toml
 
 🏵 **Authored and maintained by Spencer Woo.**
 
-[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://workers.cloudflare.com/) [![Deploy](https://img.shields.io/badge/Github%20Actions-f38020?logo=github&logoColor=f38020&labelColor=282d33)](https://github.com/wejudging/onedrive-cf-index/actions)
+
+
+
+[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://workers.cloudflare.com/) 
+
+
+[![Deploy](https://img.shields.io/badge/Github%20Actions-f38020?logo=github&logoColor=f38020&labelColor=282d33)](https://github.com/wejudging/onedrive-cf-index/actions)
 
 
 
