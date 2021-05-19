@@ -235,10 +235,10 @@ vi /Users/weijiajin/.wrangler/config/default.toml
 
 
 
-[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://workers.cloudflare.com/) 
+[![Hosted on Cloudflare Workers](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/CF-Workers-f38020.svg)](https://workers.cloudflare.com/) 
 
 
-[![Deploy](https://img.shields.io/badge/Github%20Actions-f38020?logo=github&logoColor=f38020&labelColor=282d33)](https://github.com/wejudging/onedrive-cf-index/actions)
+[![Deploy](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/Github-Actions-f38020.svg)](https://github.com/wejudging/onedrive-cf-index/actions)
 
 
 
