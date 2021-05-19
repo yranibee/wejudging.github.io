@@ -36,7 +36,7 @@ meta:
 footer:
   license: ''
   info_not_open_source: '本站由 %s 创建,您可以在 %s 找到本站源码。'
-  info_open_source: '[![又拍云](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/又拍云.svg)](https://www.upyun.com)  |  [weijiajin © 2021](https://weijiajin.com/about)  |  [鲁ICP备18011116号-2](https://beian.miit.gov.cn/)  |  本站源码在 %s '
+  info_open_source: '[![Hosted on Cloudflare Workers](https://img.shields.io/badge/Hosted%20on-CF%20Workers-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33)](https://workers.cloudflare.com/)  |  [weijiajin © 2021](https://weijiajin.com/about)  |  [鲁ICP备18011116号-2](https://beian.miit.gov.cn/)  |  本站源码在 %s '
 
 page:
   error:
