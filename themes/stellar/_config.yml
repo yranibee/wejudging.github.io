@@ -156,7 +156,7 @@ plugins:
   ## optional plugins ##
   # preload
   preload:
-    enable: #true
+    enable: true
     service: flying_pages # instant_page, flying_pages
     instant_page: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js
     flying_pages: https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js
