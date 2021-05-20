@@ -156,7 +156,7 @@ plugins:
   ## optional plugins ##
   # preload
   preload:
-    enable: true
+    enable: #true
     service: flying_pages # instant_page, flying_pages
     instant_page: https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js
     flying_pages: https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js
@@ -164,13 +164,13 @@ plugins:
   # image lazyload
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
-    enable: true # [hexo clean && hexo s] is required after changing this value.
+    enable: #true # [hexo clean && hexo s] is required after changing this value.
     js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js
     transition: blur # blur, fade
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
-    enable: true
+    enable: #true
     js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js
     distance: 8px
     duration: 500 # ms
