@@ -11,7 +11,6 @@ logo:
   large: 240px
 description: 实用脚本集合
 ---
-### Linux系统
 
 #### tcp脚本
 
@@ -27,27 +26,7 @@ chmod +x speedtest-cli
 python speedtest-cli
 ```
 
-#### qBittorrent for CentOS7一键安装脚本
-
-```bash
-wget https://raw.githubusercontent.com/wejudging/shell/main/qBittorrentCentOS7install.sh && chmod +x qBittorrentCentOS7install.sh
-./qBittorrentCentOS7install.sh
-```
-
-##### 显示内容：
-
-qBittorrentWEB地址：你的机器公网IP+端口8080
-WEB账号：admin
-WEB密码：adminadmin
-
-##### 管理命令：
-```bash
-systemctl start qbittorrent
-systemctl stop qbittorrent
-systemctl restart qbittorrent
-```
-
-### 生成秘钥
+#### 生成秘钥
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "Deploy Key" -f github-deploy-key -N ""
@@ -56,5 +35,11 @@ ssh-keygen -t rsa -b 4096 -C "Deploy Key" -f github-deploy-key -N ""
 当前目录生成两个文件：
 - github-deploy-key —— 私钥
 - github-deploy-key.pub —— 公钥
+
+#### 图标生成
+
+```bash
+https://img.shields.io/badge/XXX-YYY-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33
+```
 
 
