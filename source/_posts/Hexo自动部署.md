@@ -3,7 +3,7 @@ title: GitHub Actions 实现 Hexo 自动部署
 cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/actions.png
 date: 2021-04-21
 tags: [Hexo, GitHub]
-categories: [笔记]
+categories: 折腾
 ---
 
 ### Hexo

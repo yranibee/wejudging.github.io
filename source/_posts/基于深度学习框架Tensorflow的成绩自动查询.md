@@ -4,7 +4,7 @@ date: 2020-11-24 19:02:37
 tags:
 - tensorflow
 - python
-categories: python    
+categories: 折腾    
 description: 程序自动化操作，简化成绩查询过程，节省时间，提高效率。
 ---
 

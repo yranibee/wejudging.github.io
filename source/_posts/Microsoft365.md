@@ -2,7 +2,7 @@
 title: Microsoft 365 E5 开发者
 date: 2021-04-26 14:12:39
 tags: [onedrive,microsoft]
-categories: 羊毛
+categories: 折腾
 cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Microsoft365.png
 ---
 

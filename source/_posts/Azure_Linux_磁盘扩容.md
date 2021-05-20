@@ -2,7 +2,7 @@
 title: Azure Linux 磁盘扩容
 date: 2021-05-10
 tags: [Azure,Microsoft]
-categories: linux
+categories: 折腾
 cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/azure.png
 ---
 

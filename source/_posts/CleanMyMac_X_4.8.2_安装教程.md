@@ -2,7 +2,7 @@
 title: CleanMyMac_X_4.8.2_安装教程
 cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/CleanMyMac_X_4.8.2_安装教程/CleanMyMacX.png
 date: 2021-04-19 21:18:30
-categories: mac
+categories: 折腾
 ---
 1.下载安装包CleanMyMac_X_4_8_2_TNT.dmg
 2.打开安装包出现如下图标
