@@ -114,7 +114,18 @@ ffmpeg -i input.avi output.mp4
 ```bash
 ffmpeg -i input.mp4
 ```
+转码
+```bash
+ffmpeg -i input.mkv -c:v libx264 -c:a aac 良医S01E01.mkv
+```
 
+
+裁剪原始视频里面的一个片段，输出为一个新视频。
+可以指定开始时间（start）和持续时间（duration），也可以指定结束时间（end）。
+```bash
+ffmpeg -ss [start] -i [input] -t [duration] -c copy [output]
+ffmpeg -ss [start] -i [input] -to [end] -c copy [output]
+```
 
 
 
