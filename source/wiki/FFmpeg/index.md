@@ -108,6 +108,17 @@ ffmpeg -i input.avi output.mp4
 -y：不经过确认，输出时直接覆盖同名文件。
 ```
 
+### 常见用法
+
+查看文件信息
+```bash
+ffmpeg -i input.mp4
+```
+
+
+
+
+
 ### 参考链接
 
 - http://www.ruanyifeng.com/blog/2020/01/ffmpeg.html
