@@ -13,40 +13,20 @@ description: FFmpeg是视频处理最常用的开源软件。
 ---
 
 FFmpeg功能强大，用途广泛，大量用于视频网站和商业软件（比如 Youtube 和 iTunes），也是许多音频和视频格式的标准编码/解码实现。
-
 FFmpeg 本身是一个庞大的项目，包含许多组件和库文件，最常用的是它的命令行工具。本文介绍FFmpeg命令行如何处理视频，比桌面视频处理软件更简洁高效。
 
+### 安装
 
+安装homebrew
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+安装FFmpeg
+```bash
+brew install ffmpeg
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+###
 
 
 
