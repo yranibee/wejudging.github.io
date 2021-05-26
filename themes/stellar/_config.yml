@@ -21,7 +21,7 @@ sidebar:
   menu:
     post: '[btn.blog](/)'
     wiki: '[btn.wiki](/wiki/)'
-    bookmark: '[友链](/friends/)'
+    friends: '[友链](/friends/)'
     more: '[关于](/about/)'
   # Sidebar widgets
   widgets:

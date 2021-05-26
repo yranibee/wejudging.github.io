@@ -1,7 +1,7 @@
 ---
 robots: noindex,nofollow
 sitemap: false
-menu_id: more
+menu_id: friends
 seo_title: 友链
 toc_title: 友链索引
 comment_title: 快来交换友链吧～
