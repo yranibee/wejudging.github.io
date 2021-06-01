@@ -42,4 +42,8 @@ ssh-keygen -t rsa -b 4096 -C "Deploy Key" -f github-deploy-key -N ""
 https://img.shields.io/badge/XXX-YYY-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33
 ```
 
+#### mac一键开启hdpi
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)"
+```
 
