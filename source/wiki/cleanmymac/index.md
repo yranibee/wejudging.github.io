@@ -18,3 +18,6 @@ CleanMyMac X是一款专业的Mac清理软件，可智能清理mac磁盘垃圾�
 下载地址：
 
 https://onedrive.weijiajin.com/mac/cleanmymac
+
+
+如果不是最新版，请评论留言，我会更新，下载地址不变。
