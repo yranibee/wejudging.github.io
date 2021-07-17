@@ -2,6 +2,6 @@
 layout: index
 order: 2
 title: mac
-wiki: [cleanmymac]
+wiki: [cleanmymac,sublime-text]
 ---
 
