@@ -6,7 +6,7 @@ seo_title: 最新版CleanMyMac X 让您的Mac焕然一新，时刻保持安全
 title: cleanmymac
 cover: true
 logo:
-  src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/cleanmymac/cleanmymac.png
+  src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/cleanmymac/cleanmymac1.png
   small: 120px
   large: 240px
 description: 最新版CleanMyMac X 让您的Mac焕然一新，时刻保持安全

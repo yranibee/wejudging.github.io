@@ -6,7 +6,7 @@ seo_title: 一款用于代码、标记和散文的精致文本编辑器。
 title: sublime-text
 cover: true
 logo:
-  src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/sublime-text/sublime-text.png
+  src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/sublime-text/sublime-text1.png
   small: 120px
   large: 240px
 description: 一款用于代码、标记和散文的精致文本编辑器。
