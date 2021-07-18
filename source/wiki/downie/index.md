@@ -3,7 +3,7 @@ layout: wiki
 wiki: downie
 order: -202102
 seo_title: Macos最好的视频下载工具
-title: permute
+title: downie
 cover: true
 logo:
   src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/downie/downie.png
