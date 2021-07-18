@@ -9,7 +9,7 @@ logo:
   src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/logic-pro/logic-pro.png
   small: 120px
   large: 240px
-description: Logic Pro 是 Mac 上功能完备的专业录音室。从奏响第一个音符到输出最后的母带,音乐人所需要的一切,尽在掌握。
+description: Logic Pro 是 Mac 上功能完备的专业录音室。
 ---
 
 Logic Pro 是 Mac 上功能完备的专业录音室。从奏响第一个音符到输出最后的母带,音乐人所需要的一切,尽在掌握。

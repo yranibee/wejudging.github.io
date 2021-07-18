@@ -9,7 +9,7 @@ logo:
   src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/motion/motion.png
   small: 120px
   large: 240px
-description: Motion是苹果公司推出的一款动态图片编辑工具，能进行文字和字幕制作生成动画效果。特性是64位架构、ColorSync 管理的色彩流水线、共享渲染引擎、高品质渲染、独立分辨率等。
+description: Motion是苹果公司推出的一款动态图片编辑工具，能进行文字和字幕制作生成动画效果。
 ---
 
 Motion是苹果公司推出的一款动态图片编辑工具，能进行文字和字幕制作生成动画效果。特性是64位架构、ColorSync 管理的色彩流水线、共享渲染引擎、高品质渲染、独立分辨率等。

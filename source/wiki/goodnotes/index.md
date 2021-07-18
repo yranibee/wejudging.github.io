@@ -9,7 +9,7 @@ logo:
   src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/项目图片/goodnotes/goodnotes.png
   small: 120px
   large: 240px
-description: 通过强大的光学文字辨识(OCR)技术,你将轻松搜索到几乎所有GoodNotes 中的资料,包括手写笔记、PDF 文字、文件及文件夹,甚至是输入过的文字与大纲。
+description: 
 ---
 
 通过强大的光学文字辨识(OCR)技术,你将轻松搜索到几乎所有GoodNotes 中的资料,包括手写笔记、PDF 文字、文件及文件夹,甚至是输入过的文字与大纲。
