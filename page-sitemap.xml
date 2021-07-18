@@ -10,89 +10,8 @@
     
     
     <url>
-        <loc>https://weijiajin.com/wiki/logic-pro/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/motion/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/motrix/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/onedrive-cf-index/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/parallels-desktop16/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/shell/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/sublime-text/</loc>
-        <lastmod>2021-07-18T05:21:14.784Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/FFmpeg/</loc>
-        <lastmod>2021-07-18T05:21:14.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://weijiajin.com/wiki/cleanmymac/</loc>
-        <lastmod>2021-07-18T05:21:14.780Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.4</priority>
-    </url>
-    
-    
-    
-    <url>
         <loc>https://weijiajin.com/wiki/compressor/</loc>
-        <lastmod>2021-07-18T05:21:14.780Z</lastmod>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -101,7 +20,97 @@
     
     <url>
         <loc>https://weijiajin.com/wiki/final-cut-pro/</loc>
-        <lastmod>2021-07-18T05:21:14.780Z</lastmod>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/logic-pro/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/motion/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/motrix/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/onedrive-cf-index/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/parallels-desktop16/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/shell/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/sublime-text/</loc>
+        <lastmod>2021-07-18T05:52:03.087Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/1password/</loc>
+        <lastmod>2021-07-18T05:52:03.083Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/FFmpeg/</loc>
+        <lastmod>2021-07-18T05:52:03.083Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://weijiajin.com/wiki/cleanmymac/</loc>
+        <lastmod>2021-07-18T05:52:03.083Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -110,7 +119,7 @@
     
     <url>
         <loc>https://weijiajin.com/wiki/categories/mac/</loc>
-        <lastmod>2021-07-18T05:21:14.780Z</lastmod>
+        <lastmod>2021-07-18T05:52:03.083Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -119,7 +128,7 @@
     
     <url>
         <loc>https://weijiajin.com/wiki/categories/%25E5%25BC%2580%25E6%25BA%2590/</loc>
-        <lastmod>2021-07-18T05:21:14.780Z</lastmod>
+        <lastmod>2021-07-18T05:52:03.083Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
@@ -128,7 +137,7 @@
     
     <url>
         <loc>https://weijiajin.com/about/</loc>
-        <lastmod>2021-07-18T05:21:14.728Z</lastmod>
+        <lastmod>2021-07-18T05:52:03.035Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.4</priority>
     </url>
