@@ -73,11 +73,14 @@ Microsoft 365 E5 开发者 主要可以白嫖Office与onedrive 5T大容量还可
 
 {% timeline %}
 
-<!-- node 2021年6月24日 -->
+<% timenode 2021年6月24日 %>
 
 - 续订成功
 
 {% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/文章图片/365/365renew.png width:500px %}
+
+
+{% endtimenode %}
 
 {% endtimeline %}
 
