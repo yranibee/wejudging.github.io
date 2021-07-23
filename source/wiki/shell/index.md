@@ -46,4 +46,8 @@ https://img.shields.io/badge/XXX-YYY-f38020?logo=cloudflare&logoColor=f38020&lab
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)"
 ```
+#### x-ui
 
+```bash
+bash <(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.sh) 0.2.0
+```
